@@ -1,0 +1,57 @@
+FORMULARIO DE CAMPO - DIAGNOSTICO DOS SISTEMAS DE ABASTECIMENTO (BACIA DO RIO MARAPANIM)
+
+ARQUIVOS
+  index.html            o formulario
+  sw.js                 guarda o app no tablet para funcionar sem internet
+  manifest.webmanifest  permite instalar na tela inicial
+  icon-*.png            icones
+
+PUBLICAR (UMA VEZ, COM INTERNET) - exemplo com GitHub Pages
+  1. Crie uma conta e um repositorio publico novo (ex.: formulario-marapanim).
+  2. "Add file > Upload files" e envie TODOS os arquivos desta pasta (nao o .zip).
+  3. Settings > Pages > Branch "main" / pasta "/ (root)" > Save.
+  4. Em 1-2 minutos o endereco fica disponivel:
+     https://SEU-USUARIO.github.io/formulario-marapanim/
+  (Alternativa sem conta no GitHub: arrastar a pasta em app.netlify.com/drop)
+
+INSTALAR NO TABLET (ANTES DE VIAJAR, COM INTERNET)
+  1. Abra o endereco no Chrome do tablet.
+  2. Espere aparecer a etiqueta verde "Pronto para offline" no topo.
+  3. Menu (tres pontos) > "Instalar app" ou "Adicionar a tela inicial".
+  4. Abra pelo icone, autorize a localizacao quando pedir.
+  5. TESTE: ative o modo aviao, abra o app, preencha e salve um registro, capture o GPS.
+     Depois exclua o registro de teste.
+
+NO CAMPO
+  - Os campos sao guardados automaticamente (rascunho). Ao terminar, toque em "Salvar registro".
+  - Nao limpe os dados do navegador e nao use aba anonima.
+  - Aba "Registros" > "Rotina do dia": cartao recolhivel. Fechado, mostra o alerta de pendencia
+    (amarelo) ou "Tudo em dia" (verde). Toque no cartao ou na seta para abrir a linha de passos.
+    A pilula "Rotina do dia N/6" no topo abre o cartao direto.
+    Linha de passos que muda de cor:
+    Verde = cumprido. Amarelo = pendente. Cinza = aguardando. Pilula no topo: "Rotina do dia N/6".
+    1. Salvar registros   2. Exportar o Excel   3. Exportar as fotos
+    4. Fazer o backup (.json)   5. Enviar os arquivos (confirme em "Marquei como enviado")
+    6. Proteger os dados (nao limpar dados do navegador, nao usar aba anonima)
+  - Ao fim de cada dia: cumpra os passos 2 a 5 e envie os arquivos para e-mail/Drive quando houver sinal.
+
+FOTOS
+  - Secao "6 Registros" > "Tirar foto" (camera) ou "Escolher da galeria".
+  - As fotos sao reduzidas (maior lado 1600 px) e ficam guardadas no tablet, ligadas ao registro.
+  - Cada foto tem tipo (captacao, reservatorio, ETE...) e descricao opcional.
+  - Fotos feitas pela camera do app guardam a posicao do GPS, quando disponivel.
+  - Para levar as fotos: "Exportar as fotos" > "Fotos (.zip)". O zip traz as imagens com nomes
+    Municipio_Localidade_AAAA-MM-DD_01.jpg e um indice (indice_fotos.csv).
+  - O Excel exportado ganha a aba "Fotos" (uma linha por foto) e as colunas "Fotos (quantidade)" e
+    "Fotos (arquivos)" na aba Registros.
+  - O backup .json guarda os dados dos registros, mas NAO as imagens. As imagens vao no .zip.
+
+COORDENADAS
+  - GPS com problema: o painel "Digitar coordenadas manualmente" abre sozinho. Aceita graus decimais
+    (ex.: -0,6892) ou graus, minutos e segundos. Depois escolha a "Origem das coordenadas".
+  - Formato igual ao da planilha: GGMMSS,ss (ex.: 004121,12), com hemisferio ao lado (padrao S e W).
+  - Na exportacao saem tambem as colunas em graus decimais (para GIS) e a precisao do GPS.
+  - O GPS do tablet fornece WGS84, equivalente ao SIRGAS 2000 para esta finalidade (diferenca de centimetros).
+
+ATUALIZAR O APP
+  - Edite os arquivos, aumente o numero em CACHE no sw.js (ex.: marapanim-v2) e publique de novo.
