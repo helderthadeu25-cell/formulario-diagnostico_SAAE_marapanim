@@ -77,7 +77,7 @@ button.pill{cursor:pointer}
 
 .field{margin-bottom:28px}
 .lbl{display:block;font-weight:600;font-size:16px;margin-bottom:9px}
-.req{color:var(--accent)}
+.req{color:#DC2626;font-weight:700}
 .hint{margin-top:7px;font-size:14px;color:var(--muted)}
 .hint.bad{color:var(--danger);font-weight:600}
 input[type=text],input[type=date],select,textarea{width:100%;min-height:56px;padding:0 18px;border:1.5px solid var(--line-strong);border-radius:16px;background:var(--bg)}
@@ -96,6 +96,7 @@ select{appearance:none;-webkit-appearance:none;padding-right:46px;background-ima
 .withbtn input{flex:1}
 .obs-btn{display:inline-flex;align-items:center;gap:6px;min-height:40px;margin-top:10px;padding:0 16px;border:0;border-radius:999px;background:var(--accent-soft);color:var(--accent-dark);font-size:14px;font-weight:600;cursor:pointer}
 .obs-btn::before{content:"+";font-size:18px;line-height:1}
+.obs-lbl{margin-top:10px;font-size:14px;font-weight:600;color:var(--accent-dark)}
 .obs textarea{min-height:84px;margin-top:10px}
 .gps{display:flex;flex-wrap:wrap;gap:14px 18px;align-items:center;padding:18px 20px;margin-bottom:28px;border:1.5px solid var(--accent-line);border-radius:24px;background:var(--accent-soft)}
 .gps-status{flex:1 1 220px;font-size:14px;color:#334155}
@@ -107,6 +108,7 @@ select{appearance:none;-webkit-appearance:none;padding-right:46px;background-ima
 .btn.small{min-height:44px;padding:0 20px;font-size:15px}
 .btn.danger{border-color:var(--danger-line);color:var(--danger)}
 .btn:disabled{opacity:.4;cursor:default;border-color:var(--line-strong)}
+.pager .btn.primary{margin-left:auto}
 .pager{display:flex;justify-content:space-between;gap:12px;margin-top:6px;padding-top:22px;border-top:1px solid var(--line)}
 .banner{display:flex;flex-wrap:wrap;gap:10px;align-items:center;padding:14px 20px;margin-bottom:14px;background:var(--amber-soft);border-radius:20px;color:var(--amber);font-size:15px;font-weight:500}
 
@@ -193,6 +195,13 @@ select{appearance:none;-webkit-appearance:none;padding-right:46px;background-ima
 .ph-head .lbl{margin:0}
 .ph-head .hint{margin:0}
 .ph-actions{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:16px}
+.stamp{display:flex;align-items:center;gap:12px;width:100%;margin-bottom:16px;padding:10px 14px;border:1.5px solid var(--line);border-radius:18px;background:#fff;text-align:left;cursor:pointer}
+.stamp b{display:block;font-size:14.5px;font-weight:600}
+.stamp small{display:block;font-size:12.5px;color:var(--muted)}
+.stamp .sw{flex:none;position:relative;width:46px;height:28px;border-radius:999px;background:var(--line-strong);transition:background .15s}
+.stamp .sw::after{content:"";position:absolute;top:3px;left:3px;width:22px;height:22px;border-radius:50%;background:#fff;transition:transform .15s}
+.stamp[aria-checked=true] .sw{background:var(--accent)}
+.stamp[aria-checked=true] .sw::after{transform:translateX(18px)}
 .pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:12px;margin-bottom:10px}
 .pcard{display:flex;gap:14px;padding:12px;border-radius:20px;background:#fff;box-shadow:0 0 0 1px var(--line)}
 .pthumb{flex:none;display:grid;place-items:center;width:112px;height:112px;padding:0;border:0;border-radius:16px;overflow:hidden;background:var(--chip-bg);color:var(--muted);font-size:13px;cursor:zoom-in}
@@ -298,9 +307,12 @@ select{appearance:none;-webkit-appearance:none;padding-right:46px;background-ima
 @media (max-width:900px){
   .shell{padding:10px 12px 0}
   .hero{padding:18px 18px 22px;border-radius:28px;gap:18px}
-  .logo{padding:8px 22px}
-  .logo img{height:48px}
-  .chips-status{justify-content:flex-start}
+  .hero-top{flex-wrap:nowrap;align-items:flex-start;gap:10px}
+  .logo{flex:none;padding:6px 16px}
+  .logo img{height:40px}
+  .chips-status{flex:1;min-width:0;justify-content:flex-end;gap:6px}
+  .pill{min-height:28px;padding:0 10px;gap:5px;font-size:12px}
+  .pill .dot{width:7px;height:7px}
   .layout{grid-template-columns:1fr;gap:12px}
   .secnav{position:sticky;top:0;z-index:10;flex-direction:row;overflow-x:auto;gap:8px;padding:8px 12px;margin:0 -12px;border-radius:0;background:var(--bg);box-shadow:none}
   .secnav button{width:auto;flex:none;white-space:nowrap;background:#fff;box-shadow:0 0 0 1px var(--line)}
@@ -313,6 +325,10 @@ select{appearance:none;-webkit-appearance:none;padding-right:46px;background-ima
   .rrow{grid-template-columns:44px minmax(0,1fr) auto;row-gap:8px}
   .rrow .c-mid,.rrow .c-prog,.rrow .c-stat{grid-column:2 / -1}
   .rrow .acts{grid-column:3;grid-row:1}
+}
+@media (max-width:560px){
+  .hero-top{flex-wrap:wrap}
+  .chips-status{flex:1 1 100%;justify-content:flex-start}
 }
 @media (max-width:600px){
   .stats{grid-template-columns:1fr}
@@ -421,7 +437,7 @@ const SN_NIA = ['Sim', 'Não', 'Não informada'];
 const COND   = ['Adequadas', 'Parcialmente adequadas', 'Inadequadas', 'Não avaliadas'];
 
 const SECTIONS = [
-  { short: '0 Visita', title: '0. Identificação da visita e do município', fields: [
+  { short: '1 Visita', title: '1. Identificação da visita e do município', fields: [
     { id: 'municipio', label: 'Município', type: 'select', req: true,
       options: ['Santa Izabel do Pará','Santo Antônio do Tauá','São Caetano de Odivelas','Vigia','Terra Alta','Curuçá','Marapanim','Magalhães Barata','Maracanã','Igarapé Açú','São Francisco do Pará','Castanhal'] },
     { id: 'localidade', label: 'Localidade/comunidade', type: 'text', req: true },
@@ -430,15 +446,15 @@ const SECTIONS = [
     { id: 'instituicao', label: 'Instituição/órgão responsável pelo sistema', type: 'chips',
       options: ['PREFEITURA MUNICIPAL','COSANPA','ÁGUAS DO PARÁ','SERVIÇO AUTONOMO','OUTRO'] },
   ]},
-  { short: '1.1 Captação', title: '1.1 Captação', fields: [
+  { short: '2 Captação', title: '2. Captação', fields: [
     { id: 'tipo_captacao', label: 'Tipo de captação', type: 'chips',
       options: ['Poço tubular - Subterrânea','Rio - Superficial','Igarapé - Superficial','Lago/açude - Superficial','Subterrânea e Superficial','Outra'] },
     { id: 'id_captacao', label: 'Identificação da captação/poço', type: 'text' },
     { id: '_gps', type: 'gps' },
     { id: 'lat', label: 'Latitude (SIRGAS 2000)', type: 'coord', lat: true,
-      hint: 'Só números, com vírgula nos decimais dos segundos. Formato GGMMSS,ss (ex.: 004120,15).' },
+      hint: 'Digite graus, minutos e segundos (vírgula nos decimais dos segundos). Ex.: 0° 41′ 20,15″.' },
     { id: 'lon', label: 'Longitude (SIRGAS 2000)', type: 'coord', lat: false,
-      hint: 'Só números, com vírgula nos decimais dos segundos. Formato GGMMSS,ss (ex.: 474212,30).' },
+      hint: 'Digite graus, minutos e segundos (vírgula nos decimais dos segundos). Ex.: 47° 42′ 12,30″.' },
     { id: 'coord_origem', label: 'Origem das coordenadas', type: 'chips',
       options: ['GPS do tablet','Outro aparelho de GPS','Mapa ou imagem de satélite','Informada pelo responsável local','Não obtida'] },
     { id: 'corpo_hidrico', label: 'Corpo hídrico', type: 'text' },
@@ -450,7 +466,7 @@ const SECTIONS = [
     { id: 'cond_captacao', label: 'Condições de proteção/conservação da captação', type: 'chips', options: COND },
     { id: 'obs_captacao', label: 'Observações da captação', type: 'textarea' },
   ]},
-  { short: '1.2 Operação', title: '1.2 Disponibilidade e operação', fields: [
+  { short: '3 Operação', title: '3. Disponibilidade e operação', fields: [
     { id: 'capacidade', label: 'Capacidade de produção do sistema em m³/dia (se disponível)', type: 'number' },
     { id: 'demanda_hab', label: 'Demanda estimada/atendida em nº de habitantes (se disponível)', type: 'number' },
     { id: 'interrupcoes', label: 'Há interrupções no abastecimento?', type: 'chips', options: SN_NI },
@@ -460,7 +476,7 @@ const SECTIONS = [
     { id: 'outra_causa', label: 'Outra causa/observações', type: 'textarea' },
     { id: 'perdas', label: 'Perdas no sistema', type: 'text', hint: 'Percentual estimado e/ou descrição, se houver.' },
   ]},
-  { short: '1.3 Tratamento', title: '1.3 Tratamento e qualidade da água', fields: [
+  { short: '4 Tratamento', title: '4. Tratamento e qualidade da água', fields: [
     { id: 'trat_existe', label: 'Existe tratamento de água?', type: 'chips', options: SN_NI },
     { id: 'trat_tipo', label: 'Tipo de tratamento', type: 'text' },
     { id: 'trat_condicao', label: 'Condição das instalações de tratamento', type: 'chips', options: COND },
@@ -469,7 +485,7 @@ const SECTIONS = [
     { id: 'analises_result', label: 'Parâmetros/últimos resultados disponíveis', type: 'textarea' },
     { id: 'reclam_qualidade', label: 'Registros de reclamações/ocorrências relacionadas à qualidade', type: 'textarea' },
   ]},
-  { short: '1.4 Reservação', title: '1.4 Reservação e distribuição', fields: [
+  { short: '5 Reservação', title: '5. Reservação e distribuição', fields: [
     { id: 'reservatorio', label: 'Existe reservatório?', type: 'chips', options: SN_NIA },
     { id: 'reserv_qtd', label: 'Quantidade e capacidade de reservação', type: 'text' },
     { id: 'reserv_cond', label: 'Condição do reservatório', type: 'chips', options: COND },
@@ -478,7 +494,7 @@ const SECTIONS = [
     { id: 'micromedicao', label: 'Existe micromedição/hidrômetros?', type: 'chips', options: SN_NIA },
     { id: 'obs_14', label: 'Observações', type: 'textarea' },
   ]},
-  { short: '2 Esgoto', title: '2. Sistema de esgotamento sanitário', fields: [
+  { short: '6 Esgoto', title: '6. Sistema de esgotamento sanitário', fields: [
     { id: 'esgoto_solucao', label: 'Solução predominante para esgotamento sanitário', type: 'chips',
       options: ['Rede coletora','Fossa Séptica','Fossa comum','Estação de Tratamento de Esgoto','Infiltração no solo','Lançamento em corpo hídrico','Outro','Não informado'] },
     { id: 'esgoto_pop', label: 'População/domicílios atendidos (se disponível)', type: 'text' },
@@ -491,7 +507,7 @@ const SECTIONS = [
     { id: 'corpo_receptor', label: 'Corpo receptor', type: 'text' },
     { id: 'esgoto_problemas', label: 'Principais problemas/ocorrências observados', type: 'textarea' },
   ]},
-  { short: '3 Segurança hídrica', title: '3. Segurança hídrica e vulnerabilidades', fields: [
+  { short: '7 Segurança hídrica', title: '7. Segurança hídrica e vulnerabilidades', fields: [
     { id: 'vulnerab', label: 'Vulnerabilidades que possam comprometer a continuidade do abastecimento?', type: 'chips',
       options: ['Sim','Não','Não foi possível avaliar'] },
     { id: 'vulnerab_desc', label: 'Descrição das vulnerabilidades', type: 'textarea' },
@@ -502,7 +518,7 @@ const SECTIONS = [
     { id: 'backup', label: 'Existe sistema de reserva/backup para interrupções?', type: 'chips', options: SN_NIA },
     { id: 'fatores', label: 'Fatores que podem afetar a continuidade do abastecimento', type: 'textarea' },
   ]},
-  { short: '4 Gestão', title: '4. Gestão e aspectos institucionais', fields: [
+  { short: '8 Gestão', title: '8. Gestão e aspectos institucionais', fields: [
     { id: 'pmsb', label: 'O município possui Plano Municipal de Saneamento Básico – PMSB?', type: 'chips', options: SN_NIA },
     { id: 'pmsb_ano', label: 'Ano/atualização do PMSB', type: 'text' },
     { id: 'info_atual', label: 'Há informações técnicas atualizadas sobre o sistema?', type: 'chips',
@@ -510,19 +526,19 @@ const SECTIONS = [
     { id: 'equipe_tec', label: 'Há equipe técnica responsável pela operação/gestão?', type: 'chips', options: SN_NIA },
     { id: 'dificuldades', label: 'Principais dificuldades institucionais/operacionais relatadas', type: 'textarea' },
   ]},
-  { short: '5 Percepção local', title: '5. Percepção local e informações complementares', fields: [
+  { short: '9 Percepção local', title: '9. Percepção local e informações complementares', fields: [
     { id: 'reclam_pop', label: 'Principais reclamações relatadas pela população/usuários', type: 'textarea' },
     { id: 'fontes_alt_pop', label: 'Uso de fontes alternativas pela população', type: 'textarea' },
     { id: 'obs_entrevistado', label: 'Observações do entrevistado/responsável local', type: 'textarea' },
   ]},
-  { short: '6 Registros', title: '6. Registros fotográficos e geoespaciais', fields: [
+  { short: '10 Registros', title: '10. Registros fotográficos e geoespaciais', fields: [
     { id: '_photos', type: 'photos' },
     { id: 'pontos_foto', label: 'Pontos fotografados', type: 'textarea' },
     { id: 'coord_adic', label: 'Coordenadas adicionais', type: 'textarea', gps: true },
     { id: 'fotos_desc', label: 'Identificação/descrição das fotografias', type: 'textarea' },
     { id: 'obs_campo', label: 'Observações de campo', type: 'textarea' },
   ]},
-  { short: '7 Síntese', title: '7. Síntese técnica da visita', fields: [
+  { short: '11 Síntese', title: '11. Síntese técnica da visita', fields: [
     { id: 'achados', label: 'Principais achados do diagnóstico', type: 'textarea' },
     { id: 'necessidades', label: 'Principais necessidades/intervenções identificadas', type: 'textarea' },
     { id: 'complementacao', label: 'Informações que necessitam de complementação', type: 'textarea' },
@@ -533,6 +549,8 @@ const SECTIONS = [
 ];
 // Código de seção para diferenciar cabeçalhos repetidos na exportação
 SECTIONS.forEach(s => s.fields.forEach(f => { f.sec = s.short.split(' ')[0]; }));
+const isOtherOpt = o => /^outr[oa]s?$/i.test(String(o || '').trim());
+const hasOther = f => (f.options || []).some(isOtherOpt);
 const isData = f => f.type !== 'gps' && f.type !== 'photos';
 const ALL_FIELDS = SECTIONS.flatMap(s => s.fields).filter(isData);
 const PHOTO_TAGS = ['Captação / poço','Reservatório','Tratamento de água','Rede de distribuição','ETE / esgoto','Corpo hídrico','Localidade / entorno','Outro'];
@@ -573,6 +591,11 @@ function toast(msg, ms = 2600) {
 /* ============================================================
    COORDENADAS: graus decimais <-> GGMMSS,ss
    ============================================================ */
+function fmtDms(str, hem) {
+  const m = /^(\d+)(?:,(\d+))?$/.exec(String(str || '').trim()); if (!m || m[1].length < 5) return '';
+  const ip = m[1];
+  return `${parseInt(ip.slice(0, -4), 10)}° ${ip.slice(-4, -2)}′ ${ip.slice(-2)}${m[2] ? ',' + m[2] : ''}″ ${hem}`;
+}
 function decToDms(dec, isLat) {
   const hem = isLat ? (dec < 0 ? 'S' : 'N') : (dec < 0 ? 'W' : 'E');
   const a = Math.abs(dec);
@@ -803,14 +826,23 @@ function makeDatePicker({ id, onChange }) {
 
 function buildObs(f, wrap) {
   const box = h('div', { class: 'obs', hidden: true });
-  const ta = h('textarea', { rows: 2, 'aria-label': 'Observação sobre: ' + f.label,
-    placeholder: (f.options || []).some(o => /^outr/i.test(o)) ? 'Observação (se marcou “Outro/Outra”, especifique aqui)' : 'Observação' });
+  const lab = h('div', { class: 'obs-lbl', hidden: true }, 'Descreva a opção “Outro/Outra” escolhida');
+  const ta = h('textarea', { rows: 2, 'aria-label': 'Observação sobre: ' + f.label, placeholder: 'Observação' });
   ta.addEventListener('input', () => setObs(f.id, ta.value));
   const btn = h('button', { type: 'button', class: 'obs-btn' }, 'Adicionar observação');
   btn.addEventListener('click', () => { box.hidden = !box.hidden; if (!box.hidden) ta.focus(); });
-  box.append(ta);
+  let auto = false;
+  const refresh = () => {
+    const o = hasOther(f) && isOtherOpt(cur.data[f.id]);
+    lab.hidden = !o; btn.hidden = o;
+    ta.placeholder = o ? 'Descreva qual é (obrigatório para entender a resposta)' : 'Observação';
+    if (o) { box.hidden = false; auto = true; }
+    else if (auto && !isFilled(ta.value)) { box.hidden = true; auto = false; }
+  };
+  box.append(lab, ta);
   wrap.append(btn, box);
-  ctl[f.id].obsPaint = v => { ta.value = v || ''; box.hidden = !isFilled(v); };
+  ctl[f.id].obsRefresh = refresh;
+  ctl[f.id].obsPaint = v => { ta.value = v || ''; box.hidden = !isFilled(v); auto = false; refresh(); };
 }
 
 function buildField(f) {
@@ -851,14 +883,14 @@ function buildField(f) {
     ctl[f.id] = { paint: v => dp.set(v) };
     w.append(lbl, dp.root);
   } else if (f.type === 'select') {
-    const dd = makeDropdown({ id: 'f_' + f.id, options: f.options.map(o => ({ v: o, l: o })), onChange: v => setState(f.id, v) });
+    const dd = makeDropdown({ id: 'f_' + f.id, options: f.options.map(o => ({ v: o, l: o })), onChange: v => { setState(f.id, v); if (ctl[f.id].obsRefresh) ctl[f.id].obsRefresh(); } });
     ctl[f.id] = { paint: v => dd.set(v) };
     w.append(lbl, dd.root);
   } else if (f.type === 'chips') {
     const g = h('div', { class: 'chips', role: 'radiogroup', 'aria-labelledby': 'l_' + f.id });
     const btns = f.options.map(o => {
       const b = h('button', { type: 'button', class: 'chip', role: 'radio', 'aria-checked': 'false' }, o);
-      b.addEventListener('click', () => { const nv = cur.data[f.id] === o ? '' : o; setState(f.id, nv); paint(nv); });
+      b.addEventListener('click', () => { const nv = cur.data[f.id] === o ? '' : o; setState(f.id, nv); paint(nv); if (ctl[f.id].obsRefresh) ctl[f.id].obsRefresh(); });
       g.append(b); return b;
     });
     const paint = v => btns.forEach(b => b.setAttribute('aria-checked', String(b.textContent === v)));
@@ -867,28 +899,40 @@ function buildField(f) {
     lbl.remove();
   } else if (f.type === 'coord') {
     const hemId = f.id + '_hem';
-    const inp = h('input', { id: 'f_' + f.id, type: 'text', autocomplete: 'off', inputmode: 'decimal', placeholder: f.lat ? '004120,15' : '474212,30' });
+    const mk = (id, ph, mode, label) => { const i = h('input', { id, type: 'text', autocomplete: 'off', inputmode: mode, placeholder: ph, 'aria-label': label + ' de ' + f.label }); return i; };
+    const iD = mk('f_' + f.id, f.lat ? '1' : '47', 'numeric', 'Graus'), iM = mk('', '26', 'numeric', 'Minutos'), iS = mk('', '21,42', 'decimal', 'Segundos');
     const HL = { S: 'S – Sul', N: 'N – Norte', W: 'W – Oeste', E: 'E – Leste' };
     const dd = makeDropdown({ id: 'f_' + hemId, label: 'Hemisfério de ' + f.label, options: (f.lat ? ['S', 'N'] : ['W', 'E']).map(o => ({ v: o, l: HL[o] })), onChange: v => { setState(hemId, v); upd(); } });
-    const sel = { get value() { return dd.get(); }, set value(v) { dd.set(v); } };
     const prev = h('div', { class: 'hint' }, f.hint);
+    const cell = (t, inp) => h('div', null, h('div', { class: 'mlbl' }, t), inp);
+    const pack = () => {
+      const d = iD.value.trim(), m = iM.value.trim(), sc = iS.value.trim().replace('.', ',');
+      if (!d && !m && !sc) return '';
+      const [si, sd] = sc.split(','), sec = (si || '0').padStart(2, '0') + (sd !== undefined && sd !== '' ? ',' + sd : '');
+      return (d || '0').padStart(2, '0') + (m || '0').padStart(2, '0').slice(-2) + sec;
+    };
     const upd = () => {
-      const v = inp.value, dec = dmsToDec(v, sel.value, f.lat);
+      const v = cur.data[f.id], hem = dd.get() || DEFAULT_HEM[hemId], dec = dmsToDec(v, hem, f.lat);
       prev.classList.remove('bad');
       if (!isFilled(v)) prev.textContent = f.hint;
-      else if (Number.isNaN(dec)) { prev.textContent = 'Formato inválido. Use GGMMSS,ss (ex.: ' + (f.lat ? '004120,15' : '474212,30') + ').'; prev.classList.add('bad'); }
-      else prev.textContent = `= ${dec.toFixed(6).replace('.', ',')}° em graus decimais`;
+      else if (Number.isNaN(dec)) { prev.textContent = 'Valor inválido: minutos e segundos devem ser menores que 60 (graus até ' + (f.lat ? '90' : '180') + ').'; prev.classList.add('bad'); }
+      else prev.textContent = `Lido como ${fmtDms(v, hem)}  (${dec.toFixed(6).replace('.', ',')}° em graus decimais)`;
     };
-    inp.addEventListener('input', () => {
-      const c = inp.value.replace(/[^\d.,]/g, ''); if (c !== inp.value) inp.value = c;
-      setState(f.id, inp.value); cur.data.gps_acc = '';
+    const onIn = () => {
+      iD.value = iD.value.replace(/\D/g, '').slice(0, 3); iM.value = iM.value.replace(/\D/g, '').slice(0, 2);
+      iS.value = iS.value.replace(/[^\d.,]/g, '');
+      setState(f.id, pack()); cur.data.gps_acc = '';
       if (cur.data.coord_origem === 'GPS do tablet') setAndPaint('coord_origem', '');
       upd();
-    });
-    inp.addEventListener('blur', () => { const n = inp.value.replace('.', ','); if (n !== inp.value) { inp.value = n; setState(f.id, n); upd(); } });
-    ctl[f.id] = { paint: v => { inp.value = v || ''; upd(); } };
-    ctl[hemId] = { paint: v => { sel.value = v || DEFAULT_HEM[hemId]; upd(); } };
-    w.append(lbl, h('div', { class: 'coord' }, inp, dd.root), prev);
+    };
+    [iD, iM, iS].forEach(i => i.addEventListener('input', onIn));
+    ctl[f.id] = { paint: v => {
+      const m = /^(\d+)(?:,(\d+))?$/.exec(String(v || '').trim());
+      if (!m || m[1].length < 5) { iD.value = v || ''; iM.value = ''; iS.value = ''; }
+      else { const ip = m[1]; iD.value = String(parseInt(ip.slice(0, -4), 10)); iM.value = ip.slice(-4, -2); iS.value = ip.slice(-2) + (m[2] ? ',' + m[2] : ''); }
+      upd(); } };
+    ctl[hemId] = { paint: v => { dd.set(v || DEFAULT_HEM[hemId]); upd(); } };
+    w.append(lbl, h('div', { class: 'mrow' }, cell('Graus (°)', iD), cell('Minutos (′)', iM), cell('Segundos (″)', iS), cell('Hemisfério', dd.root)), prev);
   }
   if (withObs) buildObs(f, w);
   return w;
@@ -1001,6 +1045,7 @@ function buildGpsBox() {
 }
 
 /* ---------- Fotos ---------- */
+let stampOn = true;
 let photos = [];                       // metadados de todas as fotos
 let photoUrls = [];
 const dbPhotoDelete = id => Promise.all([dbDel('photos', id), dbDel('blobs', id)]);
@@ -1070,9 +1115,10 @@ async function renderPhotos() {
       thumb = h('button', { type: 'button', class: 'pthumb', 'aria-label': `Ampliar foto ${i + 1}` }, h('img', { src: url, alt: `Foto ${i + 1}` }));
       thumb.addEventListener('click', () => openLightbox(url));
     } else thumb = h('div', { class: 'pthumb' }, 'Sem imagem');
-    const dd = makeDropdown({ id: 'ptag_' + p.id, options: PHOTO_TAGS.map(o => ({ v: o, l: o })), placeholder: 'Tipo da foto', label: `Tipo da foto ${i + 1}`, onChange: v => { p.tag = v; savePhoto(p); } });
+    const dd = makeDropdown({ id: 'ptag_' + p.id, options: PHOTO_TAGS.map(o => ({ v: o, l: o })), placeholder: 'Tipo da foto', label: `Tipo da foto ${i + 1}`, onChange: v => { p.tag = v; savePhoto(p); cap.placeholder = capPh(); } });
     dd.set(p.tag);
-    const cap = h('input', { type: 'text', placeholder: 'Descrição (opcional)', 'aria-label': `Descrição da foto ${i + 1}`, autocomplete: 'off' });
+    const capPh = () => isOtherOpt(p.tag) ? 'Descreva o que foi fotografado' : 'Descrição (opcional)';
+    const cap = h('input', { type: 'text', placeholder: capPh(), 'aria-label': `Descrição da foto ${i + 1}`, autocomplete: 'off' });
     cap.value = p.caption || '';
     cap.addEventListener('input', () => { p.caption = cap.value; savePhoto(p); });
     const del = h('button', { type: 'button', class: 'btn small danger' }, 'Remover');
@@ -1089,9 +1135,13 @@ function buildPhotoBox() {
   const bCam = h('button', { type: 'button', class: 'btn primary' }, 'Tirar foto');
   const bGal = h('button', { type: 'button', class: 'btn' }, 'Escolher da galeria');
   bCam.addEventListener('click', () => cam.click()); bGal.addEventListener('click', () => gal.click());
+  const stampToggle = h('button', { type: 'button', class: 'stamp', id: 'stampBtn', role: 'switch', 'aria-checked': String(stampOn) },
+    h('span', { class: 'sw', 'aria-hidden': 'true' }), h('span', null, h('b', null, 'Gravar local, coordenadas e data nas fotos exportadas'), h('small', null, 'Aplicado só ao exportar o .zip. A foto guardada no tablet não é alterada.')));
+  stampToggle.addEventListener('click', () => setStamp(!stampOn));
   return h('div', { class: 'photos' },
     h('div', { class: 'ph-head' }, h('div', { class: 'lbl' }, 'Fotos do registro'), h('span', { class: 'hint', id: 'photoCount' }, '0 fotos')),
     h('div', { class: 'ph-actions' }, bCam, bGal, cam, gal),
+    stampToggle,
     h('div', { class: 'pgrid', id: 'pgrid' }),
     h('div', { class: 'hint' }, 'As fotos são reduzidas (até 1600 px) e ficam guardadas neste tablet. Para levá-las, use “Fotos (.zip)” na aba Registros.'));
 }
@@ -1106,10 +1156,10 @@ function buildAll() {
     const p = h('section', { class: 'panel', hidden: true, 'aria-label': s.title },
       h('div', { class: 'phead' }, h('h2', null, s.title), h('div', { class: 'prog-wrap' }, h('span', { class: 'prog-txt' }, ''), h('div', { class: 'prog' }, h('i')))));
     s.fields.forEach(f => p.append(buildField(f)));
-    const prev = h('button', { type: 'button', class: 'btn', disabled: i === 0 }, '‹ Anterior');
-    const next = h('button', { type: 'button', class: 'btn primary', disabled: i === SECTIONS.length - 1 }, 'Próxima ›');
-    prev.addEventListener('click', () => showSection(i - 1));
-    next.addEventListener('click', () => showSection(i + 1));
+    const prev = i > 0 ? h('button', { type: 'button', class: 'btn' }, '‹ Anterior') : null;
+    const next = i < SECTIONS.length - 1 ? h('button', { type: 'button', class: 'btn primary' }, 'Próxima ›') : null;
+    if (prev) prev.addEventListener('click', () => showSection(i - 1));
+    if (next) next.addEventListener('click', () => showSection(i + 1));
     p.append(h('div', { class: 'pager' }, prev, next));
     host.append(p); panels.push(p);
   });
@@ -1570,7 +1620,7 @@ function buildTable(recs) {
       }});
       if (!f.lat) cols.push({ h: 'Precisão do GPS (m)', get: r => ({ v: r.data.gps_acc === undefined ? '' : r.data.gps_acc, n: true }) });
     }
-    if (sorted.some(r => isFilled((r.obs || {})[f.id]))) cols.push({ h: name(f) + ' – observação', get: r => ({ v: (r.obs || {})[f.id] || '' }) });
+    if (sorted.some(r => isFilled((r.obs || {})[f.id]))) cols.push({ h: name(f) + (hasOther(f) ? ' – descrição de “Outro” / observação' : ' – observação'), get: r => ({ v: (r.obs || {})[f.id] || '' }) });
   }
   const names = photoNames();
   cols.push({ h: 'Fotos (quantidade)', get: r => ({ v: photos.filter(p => p.rid === r.id).length, n: true }) });
@@ -1600,12 +1650,45 @@ async function xlsxFile() {
   return { blob: await buildXlsxBlob(sheets), name: `diagnostico_marapanim_${stamp()}.xlsx` };
 }
 async function exportXlsx() { if (!needRecords()) return; const f = await xlsxFile(); download(f.blob, f.name); await markExported('xlsx'); toast('Planilha Excel gerada'); }
+const fmtDeg = (v, isLat) => { const x = decToDms(v, isLat); return fmtDms(x.str, x.hem); };
+function stampLines(p, r) {
+  const d = r.data, l1 = [d.municipio, d.localidade].filter(Boolean).join(' – ') + (p.tag ? ' | ' + p.tag : '');
+  let l2;
+  if (p.lat !== null && p.lat !== undefined) l2 = `Lat ${fmtDeg(p.lat, true)}   Lon ${fmtDeg(p.lon, false)}   (GPS ±${p.acc} m)`;
+  else {
+    const la = dmsToDec(d.lat, d.lat_hem || DEFAULT_HEM.lat_hem, true), lo = dmsToDec(d.lon, d.lon_hem || DEFAULT_HEM.lon_hem, false);
+    l2 = (la !== null && lo !== null && !Number.isNaN(la) && !Number.isNaN(lo)) ? `Lat ${fmtDeg(la, true)}   Lon ${fmtDeg(lo, false)}   (coordenadas do ponto)` : 'Coordenadas não registradas';
+  }
+  return [l1 || 'Sem local', l2, fmtTs(p.ts)];
+}
+async function stampBlob(blob, lines) {
+  const bmp = await createImageBitmap(blob), w = bmp.width, ht = bmp.height;
+  const cv = document.createElement('canvas'); cv.width = w; cv.height = ht;
+  const c = cv.getContext('2d'); c.drawImage(bmp, 0, 0); if (bmp.close) bmp.close();
+  let fs = Math.max(14, Math.round(w / 44)), pad = Math.round(fs * 0.7);
+  const setF = () => { c.font = `600 ${fs}px Inter, system-ui, Arial, sans-serif`; };
+  setF();
+  while (fs > 10 && Math.max(...lines.map(t => c.measureText(t).width)) > w - 2 * pad) { fs--; setF(); }
+  const lh = Math.round(fs * 1.35), bh = lines.length * lh + pad * 2 - Math.round(fs * 0.3);
+  c.fillStyle = 'rgba(0,0,0,.62)'; c.fillRect(0, ht - bh, w, bh);
+  c.fillStyle = '#fff'; c.textBaseline = 'top';
+  lines.forEach((t, i) => c.fillText(t, pad, ht - bh + pad + i * lh));
+  return await new Promise((res, rej) => cv.toBlob(b => b ? res(b) : rej(new Error('stamp')), 'image/jpeg', 0.88));
+}
+async function setStamp(v) { stampOn = v; paintStamp(); try { await dbPut('meta', { key: 'stampPhotos', value: v }); } catch (e) { /* ignora */ } }
+function paintStamp() { const b = $('stampBtn'); if (b) { b.setAttribute('aria-checked', String(stampOn)); } }
 async function exportPhotos(share = false) {
   const t = photoTable();
   if (!t.list.length) { toast('Não há fotos de registros salvos para exportar.'); return; }
   toast('Preparando as fotos…', 15000);
   const entries = [];
-  for (const p of t.list) { const b = await dbGet('blobs', p.id); if (b) entries.push({ name: t.names.get(p.id), blob: b.blob }); }
+  const recMap = new Map(records.map(r => [r.id, r]));
+  for (const p of t.list) {
+    const b = await dbGet('blobs', p.id); if (!b) continue;
+    let out = b.blob;
+    if (stampOn) { try { out = await stampBlob(b.blob, stampLines(p, recMap.get(p.rid))); } catch (e) { out = b.blob; } }
+    entries.push({ name: t.names.get(p.id), blob: out });
+  }
   entries.push({ name: 'indice_fotos.csv', text: '\ufeff' + csvText(t.headers, t.rows) });
   const blob = await zipBlobs(entries, 'application/zip');
   const name = `fotos_marapanim_${stamp()}.zip`, n = entries.length - 1;
@@ -1721,6 +1804,7 @@ async function init() {
   try { db = await openDB(); }
   catch (e) { $('saveInfo').textContent = 'Armazenamento do navegador indisponível (aba privada?). Os dados NÃO serão guardados.'; toast('Armazenamento indisponível', 6000); return; }
 
+  try { const sv = (await dbGet('meta', 'stampPhotos')) || {}; stampOn = sv.value !== false; paintStamp(); } catch (e) { /* padrão */ }
   setupOffline(); setupStorage();
   await refresh();
 

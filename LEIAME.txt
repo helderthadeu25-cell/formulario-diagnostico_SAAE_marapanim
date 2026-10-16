@@ -36,7 +36,7 @@ NO CAMPO
   - Ao fim de cada dia: cumpra os passos 2 a 5 e envie os arquivos para e-mail/Drive quando houver sinal.
 
 FOTOS
-  - Secao "6 Registros" > "Tirar foto" (camera) ou "Escolher da galeria".
+  - Secao "10 Registros" > "Tirar foto" (camera) ou "Escolher da galeria".
   - As fotos sao reduzidas (maior lado 1600 px) e ficam guardadas no tablet, ligadas ao registro.
   - Cada foto tem tipo (captacao, reservatorio, ETE...) e descricao opcional.
   - Fotos feitas pela camera do app guardam a posicao do GPS, quando disponivel.
@@ -44,13 +44,21 @@ FOTOS
     Municipio_Localidade_AAAA-MM-DD_01.jpg e um indice (indice_fotos.csv).
   - O Excel exportado ganha a aba "Fotos" (uma linha por foto) e as colunas "Fotos (quantidade)" e
     "Fotos (arquivos)" na aba Registros.
+  - "Gravar local, coordenadas e data nas fotos exportadas" (ligado por padrao): ao exportar o .zip, cada
+    foto sai com uma faixa na base com municipio, localidade, coordenadas e data/hora. A foto guardada no
+    tablet nao e alterada. Foto da camera usa o GPS do momento; foto da galeria usa as coordenadas do registro.
   - O backup .json guarda os dados dos registros, mas NAO as imagens. As imagens vao no .zip.
 
+OPCAO "OUTRO/OUTRA"
+  - Ao marcar uma opcao "Outro/Outra", abre um campo para descrever qual e.
+
 COORDENADAS
+  - Tres campos: Graus, Minutos e Segundos (segundos com virgula nos decimais) + hemisferio (padrao S e W).
+    Abaixo aparece a leitura, ex.: 1 grau 26' 21,42" S, e o valor em graus decimais.
+  - Na exportacao o valor sai no formato da planilha original (GGMMSS,ss), mais colunas em graus decimais
+    (para GIS) e a precisao do GPS.
   - GPS com problema: o painel "Digitar coordenadas manualmente" abre sozinho. Aceita graus decimais
     (ex.: -0,6892) ou graus, minutos e segundos. Depois escolha a "Origem das coordenadas".
-  - Formato igual ao da planilha: GGMMSS,ss (ex.: 004121,12), com hemisferio ao lado (padrao S e W).
-  - Na exportacao saem tambem as colunas em graus decimais (para GIS) e a precisao do GPS.
   - O GPS do tablet fornece WGS84, equivalente ao SIRGAS 2000 para esta finalidade (diferenca de centimetros).
 
 ATUALIZAR O APP
