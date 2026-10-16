@@ -226,6 +226,11 @@ select{appearance:none;-webkit-appearance:none;padding-right:46px;background-ima
 .seg button{min-height:42px;padding:0 18px;border:0;border-radius:999px;background:transparent;font-size:15px;font-weight:600;cursor:pointer}
 .seg button[aria-pressed=true]{background:var(--ink);color:#fff}
 .mrow{display:grid;grid-template-columns:repeat(3,minmax(0,1fr)) 170px;gap:10px;align-items:end}
+.crow{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,1.25fr) minmax(104px,.9fr);gap:8px;align-items:center}
+.uin{position:relative}
+.uin input{padding-right:26px}
+.uin .u{position:absolute;right:11px;top:50%;transform:translateY(-50%);color:var(--muted);font-size:15px;pointer-events:none}
+@media (max-width:480px){.crow{gap:6px}.uin input{padding-left:10px;padding-right:16px}.uin .u{right:6px}}
 .mrow2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
 .mlbl{margin-bottom:6px;font-size:13px;font-weight:600;color:var(--muted)}
 .mfoot{margin-top:16px}
@@ -454,9 +459,9 @@ const SECTIONS = [
     { id: 'id_captacao', label: 'Identificação da captação/poço', type: 'text' },
     { id: '_gps', type: 'gps' },
     { id: 'lat', label: 'Latitude (SIRGAS 2000)', type: 'coord', lat: true,
-      hint: 'Digite graus, minutos e segundos (vírgula nos decimais dos segundos). Ex.: 0° 41′ 20,15″.' },
+      hint: 'Graus, minutos e segundos (vírgula nos decimais). Ex.: 0° 41′ 20,15″.' },
     { id: 'lon', label: 'Longitude (SIRGAS 2000)', type: 'coord', lat: false,
-      hint: 'Digite graus, minutos e segundos (vírgula nos decimais dos segundos). Ex.: 47° 42′ 12,30″.' },
+      hint: 'Graus, minutos e segundos (vírgula nos decimais). Ex.: 47° 42′ 12,30″.' },
     { id: 'coord_origem', label: 'Origem das coordenadas', type: 'chips',
       options: ['GPS do tablet','Outro aparelho de GPS','Mapa ou imagem de satélite','Informada pelo responsável local','Não obtida'] },
     { id: 'corpo_hidrico', label: 'Corpo hídrico', type: 'text' },
@@ -903,7 +908,7 @@ function buildField(f) {
     const hemId = f.id + '_hem';
     const mk = (id, ph, mode, label) => { const i = h('input', { id, type: 'text', autocomplete: 'off', inputmode: mode, placeholder: ph, 'aria-label': label + ' de ' + f.label }); return i; };
     const iD = mk('f_' + f.id, f.lat ? '1' : '47', 'numeric', 'Graus'), iM = mk('', '26', 'numeric', 'Minutos'), iS = mk('', '21,42', 'decimal', 'Segundos');
-    const HL = { S: 'S – Sul', N: 'N – Norte', W: 'W – Oeste', E: 'E – Leste' };
+    const HL = { S: 'Sul', N: 'Norte', W: 'Oeste', E: 'Leste' };
     const dd = makeDropdown({ id: 'f_' + hemId, label: 'Hemisfério de ' + f.label, options: (f.lat ? ['S', 'N'] : ['W', 'E']).map(o => ({ v: o, l: HL[o] })), onChange: v => { setState(hemId, v); upd(); } });
     const prev = h('div', { class: 'hint' }, f.hint);
     const cell = (t, inp) => h('div', null, h('div', { class: 'mlbl' }, t), inp);
@@ -934,7 +939,8 @@ function buildField(f) {
       else { const ip = m[1]; iD.value = String(parseInt(ip.slice(0, -4), 10)); iM.value = ip.slice(-4, -2); iS.value = ip.slice(-2) + (m[2] ? ',' + m[2] : ''); }
       upd(); } };
     ctl[hemId] = { paint: v => { dd.set(v || DEFAULT_HEM[hemId]); upd(); } };
-    w.append(lbl, h('div', { class: 'mrow' }, cell('Graus (°)', iD), cell('Minutos (′)', iM), cell('Segundos (″)', iS), cell('Hemisfério', dd.root)), prev);
+    const uin = (inp, u) => h('div', { class: 'uin' }, inp, h('span', { class: 'u', 'aria-hidden': 'true' }, u));
+    w.append(lbl, h('div', { class: 'crow' }, uin(iD, '°'), uin(iM, '′'), uin(iS, '″'), dd.root), prev);
   }
   if (withObs) buildObs(f, w);
   return w;

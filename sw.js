@@ -1,6 +1,6 @@
 // Service worker: guarda o app no tablet para funcionar sem internet.
 // Para publicar uma nova versão, altere o número em CACHE.
-const CACHE = 'marapanim-v13';
+const CACHE = 'marapanim-v14';
 const ASSETS = ['./', './index.html', './manifest.webmanifest', './icon-180.png', './icon-192.png', './icon-512.png'];
 
 self.addEventListener('install', e => {
