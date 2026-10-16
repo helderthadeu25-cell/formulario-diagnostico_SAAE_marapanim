@@ -53,7 +53,11 @@ OPCAO "OUTRO/OUTRA"
   - Ao marcar uma opcao "Outro/Outra", abre um campo para descrever qual e.
 
 COORDENADAS
-  - Tres campos: Graus, Minutos e Segundos (segundos com virgula nos decimais) + hemisferio (padrao S e W).
+  - Em cada local (captacao, ETE e lancamento) o bloco e o mesmo: botao do GPS, Latitude, Longitude e Origem.
+  - Tag verde "Obtida pelo GPS" ao lado de Latitude/Longitude quando o GPS funcionou; tag vermelha
+    "Nao houve sucesso" quando falhou (o painel manual abre sozinho). Digitar manualmente apaga a tag.
+  - Tres campos: Graus, Minutos e Segundos (segundos com virgula nos decimais) + hemisferio (padrao Sul/Oeste).
+    Nos graus vale digitar o sinal de menos: ele ja marca Sul (latitude) ou Oeste (longitude).
     Abaixo aparece a leitura, ex.: 1 grau 26' 21,42" S, e o valor em graus decimais.
   - Na exportacao o valor sai no formato da planilha original (GGMMSS,ss), mais colunas em graus decimais
     (para GIS) e a precisao do GPS.
@@ -61,5 +65,18 @@ COORDENADAS
     (ex.: -0,6892) ou graus, minutos e segundos. Depois escolha a "Origem das coordenadas".
   - O GPS do tablet fornece WGS84, equivalente ao SIRGAS 2000 para esta finalidade (diferenca de centimetros).
 
+PONTOS DE CAPTACAO (ETAPA 2)
+  - A etapa 2 aceita varios pontos. Toque em "Adicionar ponto de captacao": abre uma ficha com os campos
+    da captacao. Cada ponto vira um cartao (nome e tipo); toque no cartao para editar.
+  - Vazao de captacao (m3/dia) e calculada: vazao instantanea (m3/h) x tempo de captacao (h/dia).
+  - Na planilha Excel os pontos saem na aba "Captacoes" (uma linha por ponto), ligados ao registro.
+
+OUTROS CAMPOS NOVOS
+  - Equipe tecnica: uma pessoa por linha, com cargo/funcao e marca de "Responsavel principal".
+  - Reservatorios (etapa 5): um campo de volume em litros por reservatorio e o total somado.
+  - Responsavel pelo preenchimento (etapa 11): lista com os nomes e "Outro" (aceita varios).
+  - Todas as listas suspensas tem o botao "x" para limpar a escolha (exceto o hemisferio).
+  - Novo registro comeca sempre em branco.
+
 ATUALIZAR O APP
-  - Edite os arquivos, aumente o numero em CACHE no sw.js (ex.: marapanim-v14) e publique de novo.
+  - Edite os arquivos, aumente o numero em CACHE no sw.js (ex.: marapanim-v16) e publique de novo.

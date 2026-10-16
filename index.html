@@ -235,6 +235,71 @@ select{appearance:none;-webkit-appearance:none;padding-right:46px;background-ima
 .mlbl{margin-bottom:6px;font-size:13px;font-weight:600;color:var(--muted)}
 .mfoot{margin-top:16px}
 
+/* Limpar seleção da lista suspensa */
+.dd-clear{position:absolute;right:46px;top:50%;transform:translateY(-50%);display:grid;place-items:center;width:30px;height:30px;padding:0;border:0;border-radius:50%;background:var(--chip-bg);color:var(--muted);font-size:20px;line-height:1;cursor:pointer;z-index:1}
+.dd-clear:hover{background:var(--line);color:var(--ink)}
+.dd-clear[hidden]{display:none}
+.pwrap.hasv .dd-trigger{padding-right:84px}
+/* Tag do GPS ao lado de Latitude/Longitude */
+.gtag{display:inline-flex;align-items:center;margin-left:10px;min-height:26px;padding:0 11px;border-radius:999px;font-size:13px;font-weight:700;vertical-align:middle;white-space:nowrap}
+.gtag.ok{background:var(--ok-soft);color:var(--ok)}
+.gtag.bad{background:var(--danger-soft);color:var(--danger);box-shadow:inset 0 0 0 1px var(--danger-line)}
+.gtag[hidden]{display:none}
+.subhead{margin:6px 0 14px;font-size:17px;font-weight:700;letter-spacing:-.01em}
+.cgroup{margin-bottom:6px}
+.field.sub{padding-left:16px;border-left:3px solid var(--accent-line);margin-bottom:20px}
+.fgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 14px}
+.field[hidden]{display:none}
+.calcbox{display:flex;align-items:center;gap:8px;min-height:56px;padding:0 18px;border:1.5px dashed var(--line-strong);border-radius:16px;background:var(--chip-bg);font-size:19px;font-weight:700}
+.calcbox .u{font-size:15px;font-weight:500;color:var(--muted)}
+.calcbox.empty .cv{color:var(--muted);font-weight:500}
+/* Listas de linhas (equipe, responsáveis, reservatórios) */
+.lrows{display:grid;gap:12px;margin-bottom:6px}
+.lrow{padding:16px 18px;border:1.5px solid var(--line);border-radius:20px;background:var(--bg)}
+.lrow.compact{padding:12px 16px 16px}
+.lrow-h{display:flex;align-items:center;justify-content:space-between;gap:10px;min-height:40px;margin-bottom:6px}
+.lrow-t{font-size:14px;font-weight:700;color:var(--muted)}
+.lrow-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 12px}
+.lrow-grid.one{grid-template-columns:1fr}
+.lrow-f{margin-top:6px}
+.lrow input[type=text]{background:#fff}
+.lbl-sm{margin-bottom:6px;font-size:13px;font-weight:600;color:var(--muted)}
+.xbtn{display:grid;place-items:center;flex:none;width:40px;height:40px;padding:0;border:0;border-radius:50%;background:var(--chip-bg);color:var(--muted);font-size:24px;line-height:1;cursor:pointer}
+.xbtn:hover{background:var(--danger-soft);color:var(--danger)}
+.cb{display:inline-flex;align-items:center;gap:10px;min-height:44px;padding:0;border:0;background:transparent;font-weight:600;cursor:pointer}
+.cb .box{display:grid;place-items:center;width:28px;height:28px;border:2px solid var(--line-strong);border-radius:8px;background:#fff;color:#fff;font-size:17px;font-weight:800;line-height:1}
+.cb[aria-checked=true] .box{background:var(--accent);border-color:var(--accent)}
+.total{margin-top:12px;font-size:17px}
+.obs-btn.add{margin-top:12px}
+/* Pontos de captação */
+.cap-cards{display:grid;gap:10px;margin-bottom:14px}
+.cap-card{display:flex;align-items:center;gap:8px;padding:6px 10px 6px 6px;border:1.5px solid var(--line);border-radius:22px;background:var(--bg)}
+.cap-card:hover{border-color:var(--accent)}
+.cap-open{display:flex;align-items:center;gap:14px;flex:1;min-width:0;min-height:60px;padding:4px 8px;border:0;background:transparent;text-align:left;cursor:pointer}
+.pc-n{flex:none;display:grid;place-items:center;width:42px;height:42px;border-radius:50%;background:var(--accent-soft);color:var(--accent-dark);font-weight:700}
+.pc-main{flex:1;min-width:0;display:flex;flex-direction:column}
+.pc-t{font-weight:700;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.pc-s{font-size:14px;color:var(--muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.pc-edit{flex:none;font-size:14px;font-weight:600;color:var(--accent-dark)}
+.cap-empty{padding:22px;border:1.5px dashed var(--line-strong);border-radius:22px;text-align:center;color:var(--muted)}
+.cap-add{margin-bottom:6px}
+/* Modal */
+body.noscroll{overflow:hidden}
+.modal{position:fixed;inset:0;z-index:60;display:flex;align-items:center;justify-content:center;padding:18px;background:rgba(15,23,42,.5)}
+.modal[hidden]{display:none}
+.mdl{display:flex;flex-direction:column;width:min(780px,100%);max-height:calc(100vh - 36px);max-height:calc(100dvh - 36px);background:var(--surface);border-radius:28px;box-shadow:0 30px 80px -20px rgba(15,23,42,.5);overflow:hidden}
+.mdl-h{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:18px 26px;border-bottom:1px solid var(--line)}
+.mdl-h h3{margin:0;font-size:21px;font-weight:700;letter-spacing:-.02em}
+.mbody{position:relative;flex:1;min-height:0;overflow-y:auto;overscroll-behavior:contain;padding:24px 26px 8px}
+.mdl-f{display:flex;justify-content:flex-end;gap:12px;padding:14px 26px calc(14px + env(safe-area-inset-bottom,0px));border-top:1px solid var(--line);background:var(--surface)}
+@media (max-width:700px){
+  .modal{padding:0;align-items:flex-end}
+  .mdl{max-height:94vh;max-height:94dvh;border-radius:28px 28px 0 0}
+  .mdl-h,.mbody,.mdl-f{padding-left:18px;padding-right:18px}
+  .fgrid,.lrow-grid{grid-template-columns:1fr}
+}
+@media (min-width:701px) and (max-width:900px){ .fgrid{grid-template-columns:repeat(2,minmax(0,1fr))} }
+
 /* Rotina do dia */
 .routine{margin-bottom:12px;background:var(--surface);border:1.5px solid transparent;border-radius:28px;box-shadow:var(--shadow);overflow:hidden}
 .rt-head{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px 24px;margin-bottom:22px}
@@ -431,6 +496,13 @@ select{appearance:none;-webkit-appearance:none;padding-right:46px;background-ima
 </div>
 
 <div class="lightbox" id="lightbox" hidden role="dialog" aria-label="Foto ampliada"><img id="lbImg" alt="Foto ampliada"><button class="btn" id="lbClose" type="button">Fechar</button></div>
+<div class="modal" id="modal" hidden>
+  <div class="mdl" role="dialog" aria-modal="true" aria-labelledby="mdlTitle">
+    <div class="mdl-h"><h3 id="mdlTitle">Ponto de captação</h3><button type="button" class="xbtn" id="mdlX" aria-label="Fechar">×</button></div>
+    <div class="mbody" id="mdlBody"></div>
+    <div class="mdl-f"><button type="button" class="btn" id="mdlCancel">Cancelar</button><button type="button" class="btn primary" id="mdlSave">Salvar ponto</button></div>
+  </div>
+</div>
 <div class="toast" id="toast" hidden role="status" aria-live="polite"></div>
 
 <script>
@@ -442,36 +514,47 @@ select{appearance:none;-webkit-appearance:none;padding-right:46px;background-ima
 const SN_NI  = ['Sim', 'Não', 'Não informado'];
 const SN_NIA = ['Sim', 'Não', 'Não informada'];
 const COND   = ['Adequadas', 'Parcialmente adequadas', 'Inadequadas', 'Não avaliadas'];
+const RATING = ['Adequado', 'Parcialmente adequado', 'Inadequado', 'Não avaliado'];
+const RESP_NOMES = ['MARCOS FLÁVIO COSTA MEDEIROS', 'LÍVIA BEATRIZ OLIVEIRA FERREIRA'];
+const ANOS = []; for (let y = 2026; y >= 2008; y--) ANOS.push(String(y));
+const COORD_ORIGEM = ['GPS do tablet', 'Outro aparelho de GPS', 'Mapa ou imagem de satélite', 'Informada pelo responsável local', 'Não obtida'];
+const COORD_HINT = 'Graus, minutos e segundos (vírgula nos decimais). Ex.: 0° 41′ 20,15″.';
+
+// Campos de cada ponto de captação (abertos num modal; a etapa 2 pode ter vários pontos)
+const CAPT_FIELDS = [
+  { id: 'tipo_captacao', label: 'Tipo de captação', type: 'chips',
+    options: ['Poço tubular - Subterrânea', 'Sistema de poços tipo ponteira', 'Rio - Superficial', 'Igarapé - Superficial', 'Lago/açude - Superficial', 'Subterrânea e Superficial', 'Outra'] },
+  { id: 'id_captacao', label: 'Identificação da captação/poço', type: 'text' },
+  { id: 'coords', type: 'coordgroup', p: '', title: 'Coordenadas da captação' },
+  { id: 'corpo_hidrico', label: 'Corpo hídrico', type: 'text' },
+  { id: 'vazao_inst', label: 'Vazão instantânea (m³/h)', type: 'number' },
+  { id: 'tempo_capt', label: 'Tempo de captação (h/dia)', type: 'number' },
+  { id: 'vazao', label: 'Vazão de captação (m³/dia)', type: 'calc', unit: 'm³/dia',
+    hint: 'Calculada automaticamente: vazão instantânea × tempo de captação.',
+    calc: d => { const a = num(d.vazao_inst), b = num(d.tempo_capt); return (Number.isNaN(a) || Number.isNaN(b)) ? '' : String(Math.round(a * b * 100) / 100).replace('.', ','); } },
+  { id: 'regularizacao', label: 'Situação da regularização do uso da água', type: 'chips',
+    options: ['Outorga', 'Dispensa/Inexigibilidade', 'Solicitação protocolada', 'Não informado'] },
+  { id: 'medicao_volume', label: 'Há medição/controle do volume captado?', type: 'chips', options: SN_NIA },
+  { id: 'equipamento', label: 'Qual é o equipamento/método?', type: 'chips',
+    options: ['Hidrômetro de velocidade (monojato/unijato, multijato ou Woltman)', 'Hidrômetro volumétrico', 'Hidrômetro ultrassônico', 'Hidrômetro eletromagnético', 'Hidrômetro com telemetria', 'Não informado', 'Outro'] },
+  { id: '_cs', type: 'heading', label: 'Condições sanitárias da captação' },
+  { id: 'cond_laje', noObs: true, label: 'Laje sanitária', xl: 'Condições sanitárias – laje sanitária', type: 'chips', options: RATING, sub: true },
+  { id: 'cond_restr', noObs: true, label: 'Estrutura de restrição ao acesso', xl: 'Condições sanitárias – estrutura de restrição ao acesso', type: 'chips', options: RATING, sub: true },
+  { id: 'obs_captacao', label: 'Observações da captação', type: 'textarea' },
+];
 
 const SECTIONS = [
-  { short: '1 Visita', title: '1. Identificação da visita e do município', fields: [
+  { short: '1 Identificação', title: '1. Identificação da visita e do município', fields: [
     { id: 'municipio', label: 'Município', type: 'select', req: true,
       options: ['Santa Izabel do Pará','Santo Antônio do Tauá','São Caetano de Odivelas','Vigia','Terra Alta','Curuçá','Marapanim','Magalhães Barata','Maracanã','Igarapé Açú','São Francisco do Pará','Castanhal'] },
     { id: 'localidade', label: 'Localidade/comunidade', type: 'text', req: true },
     { id: 'data_visita', label: 'Data da visita', type: 'date', req: true },
-    { id: 'equipe', label: 'Equipe técnica/responsável', type: 'text' },
+    { id: 'equipe_lista', label: 'Equipe técnica/responsável', type: 'team' },
     { id: 'instituicao', label: 'Instituição/órgão responsável pelo sistema', type: 'chips',
       options: ['PREFEITURA MUNICIPAL','COSANPA','ÁGUAS DO PARÁ','SERVIÇO AUTONOMO','OUTRO'] },
   ]},
   { short: '2 Captação', title: '2. Captação', fields: [
-    { id: 'tipo_captacao', label: 'Tipo de captação', type: 'chips',
-      options: ['Poço tubular - Subterrânea','Rio - Superficial','Igarapé - Superficial','Lago/açude - Superficial','Subterrânea e Superficial','Outra'] },
-    { id: 'id_captacao', label: 'Identificação da captação/poço', type: 'text' },
-    { id: '_gps', type: 'gps' },
-    { id: 'lat', label: 'Latitude (SIRGAS 2000)', type: 'coord', lat: true,
-      hint: 'Graus, minutos e segundos (vírgula nos decimais). Ex.: 0° 41′ 20,15″.' },
-    { id: 'lon', label: 'Longitude (SIRGAS 2000)', type: 'coord', lat: false,
-      hint: 'Graus, minutos e segundos (vírgula nos decimais). Ex.: 47° 42′ 12,30″.' },
-    { id: 'coord_origem', label: 'Origem das coordenadas', type: 'chips',
-      options: ['GPS do tablet','Outro aparelho de GPS','Mapa ou imagem de satélite','Informada pelo responsável local','Não obtida'] },
-    { id: 'corpo_hidrico', label: 'Corpo hídrico', type: 'text' },
-    { id: 'vazao', label: 'Vazão de captação (m³/dia) (se disponível)', type: 'number' },
-    { id: 'regularizacao', label: 'Situação da regularização do uso da água', type: 'chips',
-      options: ['Outorga','Dispensa/Inexigibilidade','Solicitação protocolada','Não informado'] },
-    { id: 'medicao_volume', label: 'Há medição/controle do volume captado?', type: 'chips', options: SN_NIA },
-    { id: 'equipamento', label: 'Qual é o equipamento/método?', type: 'text' },
-    { id: 'cond_captacao', label: 'Condições de proteção/conservação da captação', type: 'chips', options: COND },
-    { id: 'obs_captacao', label: 'Observações da captação', type: 'textarea' },
+    { id: 'captacoes', label: 'Pontos de captação', type: 'points', fields: CAPT_FIELDS },
   ]},
   { short: '3 Operação', title: '3. Disponibilidade e operação', fields: [
     { id: 'capacidade', label: 'Capacidade de produção do sistema em m³/dia (se disponível)', type: 'number' },
@@ -480,8 +563,7 @@ const SECTIONS = [
     { id: 'freq_interrupcoes', label: 'Frequência/duração das interrupções', type: 'text' },
     { id: 'causas', label: 'Principais causas', type: 'chips',
       options: ['Baixa disponibilidade hídrica','Problemas de captação','Problemas elétricos','Manutenção','Demanda elevada','Rede/Distribuição','Outro'] },
-    { id: 'outra_causa', label: 'Outra causa/observações', type: 'textarea' },
-    { id: 'perdas', label: 'Perdas no sistema', type: 'text', hint: 'Percentual estimado e/ou descrição, se houver.' },
+    { id: 'perdas', label: 'Perdas no sistema (%)', type: 'number' },
   ]},
   { short: '4 Tratamento', title: '4. Tratamento e qualidade da água', fields: [
     { id: 'trat_existe', label: 'Existe tratamento de água?', type: 'chips', options: SN_NI },
@@ -494,7 +576,7 @@ const SECTIONS = [
   ]},
   { short: '5 Reservação', title: '5. Reservação e distribuição', fields: [
     { id: 'reservatorio', label: 'Existe reservatório?', type: 'chips', options: SN_NIA },
-    { id: 'reserv_qtd', label: 'Quantidade e capacidade de reservação', type: 'text' },
+    { id: 'reservatorios', label: 'Quantidade e capacidade de reservação', type: 'reservs' },
     { id: 'reserv_cond', label: 'Condição do reservatório', type: 'chips', options: COND },
     { id: 'cobertura', label: 'Cobertura aproximada da rede de abastecimento', type: 'text' },
     { id: 'nao_atendidos', label: 'Número estimado de domicílios/pessoas não atendidos pela rede', type: 'text' },
@@ -502,17 +584,24 @@ const SECTIONS = [
     { id: 'obs_14', label: 'Observações', type: 'textarea' },
   ]},
   { short: '6 Esgoto', title: '6. Sistema de esgotamento sanitário', fields: [
-    { id: 'esgoto_solucao', label: 'Solução predominante para esgotamento sanitário', type: 'chips',
-      options: ['Rede coletora','Fossa Séptica','Fossa comum','Estação de Tratamento de Esgoto','Infiltração no solo','Lançamento em corpo hídrico','Outro','Não informado'] },
+    { id: 'esgoto_recepcao', label: 'Recepção dos efluentes', type: 'chips',
+      options: ['Rede coletora','Não há','Não informado','Outro'] },
     { id: 'esgoto_pop', label: 'População/domicílios atendidos (se disponível)', type: 'text' },
-    { id: 'ete_existe', label: 'Existe estação de tratamento de esgoto – ETE?', type: 'chips', options: SN_NIA },
-    { id: 'ete_local', label: 'Localização/coordenadas da ETE', type: 'text', gps: true },
+    { id: 'ete_existe', label: 'Existe tratamento dos efluentes?', type: 'chips', options: SN_NI.concat('Outro') },
+    { id: 'efl_lancamento', label: 'Como se dá o lançamento dos efluentes?', type: 'chips',
+      options: ['Infiltração no solo','Lançamento em corpo hídrico','Outro','Não informado'] },
+    { id: 'ete_coords', type: 'coordgroup', p: 'ete_', title: 'Localização/coordenadas da ETE' },
+    { id: 'lanc_coords', type: 'coordgroup', p: 'lanc_', title: 'Coordenadas do lançamento dos efluentes' },
     { id: 'ete_tecnologia', label: 'Tecnologia/processo de tratamento', type: 'text' },
     { id: 'ete_operacao', label: 'Condição de operação', type: 'chips',
       options: ['Operando adequadamente','Operando parcialmente','Inoperante','Não avaliado'] },
-    { id: 'lancamento', label: 'Há informação sobre autorização/regularização do lançamento?', type: 'chips', options: SN_NIA },
-    { id: 'corpo_receptor', label: 'Corpo receptor', type: 'text' },
     { id: 'esgoto_problemas', label: 'Principais problemas/ocorrências observados', type: 'textarea' },
+    { id: 'lancamento', label: 'Há informação sobre autorização/regularização do lançamento?', type: 'chips', options: SN_NIA },
+    { id: 'lanc_modalidade', noObs: true, label: 'Modalidade', xl: 'Autorização do lançamento – modalidade', type: 'select',
+      options: ['Outorga de direito de uso', 'Outorga preventiva de uso'], showIf: { id: 'lancamento', eq: 'Sim' } },
+    { id: 'lanc_numero', noObs: true, label: 'Número', xl: 'Autorização do lançamento – número', type: 'number', int: true, grp: 'aut', showIf: { id: 'lancamento', eq: 'Sim' } },
+    { id: 'lanc_ano', noObs: true, label: 'Ano', xl: 'Autorização do lançamento – ano', type: 'select', options: ANOS, grp: 'aut', showIf: { id: 'lancamento', eq: 'Sim' } },
+    { id: 'corpo_receptor', label: 'Corpo receptor', type: 'text' },
   ]},
   { short: '7 Segurança hídrica', title: '7. Segurança hídrica e vulnerabilidades', fields: [
     { id: 'vulnerab', label: 'Vulnerabilidades que possam comprometer a continuidade do abastecimento?', type: 'chips',
@@ -549,19 +638,29 @@ const SECTIONS = [
     { id: 'achados', label: 'Principais achados do diagnóstico', type: 'textarea' },
     { id: 'necessidades', label: 'Principais necessidades/intervenções identificadas', type: 'textarea' },
     { id: 'complementacao', label: 'Informações que necessitam de complementação', type: 'textarea' },
-    { id: 'responsavel', label: 'Responsável pelo preenchimento', type: 'text' },
-    { id: 'data_final', label: 'Data', type: 'date' },
-    { id: 'assinatura', label: 'Assinatura/identificação', type: 'text' },
+    { id: 'responsaveis', label: 'Responsável pelo preenchimento', type: 'resp', options: RESP_NOMES.concat('Outro') },
   ]},
 ];
 // Código de seção para diferenciar cabeçalhos repetidos na exportação
 SECTIONS.forEach(s => s.fields.forEach(f => { f.sec = s.short.split(' ')[0]; }));
 const isOtherOpt = o => /^outr[oa]s?$/i.test(String(o || '').trim());
 const hasOther = f => (f.options || []).some(isOtherOpt);
-const isData = f => f.type !== 'gps' && f.type !== 'photos';
+const isData = f => f.type !== 'gps' && f.type !== 'photos' && f.type !== 'heading';
 const ALL_FIELDS = SECTIONS.flatMap(s => s.fields).filter(isData);
 const PHOTO_TAGS = ['Captação / poço','Reservatório','Tratamento de água','Rede de distribuição','ETE / esgoto','Corpo hídrico','Localidade / entorno','Outro'];
-const DEFAULT_HEM = { lat_hem: 'S', lon_hem: 'W' };
+const defHem = id => /lat_hem$/.test(id) ? 'S' : 'W';
+const asArr = v => Array.isArray(v) ? v : [];
+const fieldVisible = (f, d) => !f.showIf || d[f.showIf.id] === f.showIf.eq;
+function fieldFilled(f, d) {
+  switch (f.type) {
+    case 'team': return asArr(d[f.id]).some(x => isFilled(x.nome) || isFilled(x.cargo));
+    case 'resp': return asArr(d[f.id]).some(x => x.sel === 'Outro' ? isFilled(x.nome) : isFilled(x.sel));
+    case 'reservs': return asArr(d[f.id]).some(isFilled);
+    case 'points': return asArr(d[f.id]).length > 0;
+    case 'coordgroup': return isFilled(d[f.p + 'lat']) || isFilled(d[f.p + 'lon']);
+    default: return isFilled(d[f.id]);
+  }
+}
 
 /* ============================================================
    UTILITÁRIOS
@@ -672,14 +771,9 @@ const ctl = {};            // id -> { paint(v), obsPaint(v) }
 let secIdx = 0;
 let panels = [], navBtns = [];
 
-function setState(id, val) {
-  cur.data[id] = val;
-  const w = document.querySelector(`.field[data-id="${id}"]`);
-  if (w) { w.classList.remove('err'); const e = w.querySelector('.errmsg'); if (e) e.remove(); }
-  touch();
-}
-function setObs(id, val) { cur.obs[id] = val; touch(); }
-function setAndPaint(id, val) { cur.data[id] = val; ctl[id] && ctl[id].paint(val); }
+const setState = (id, val) => MAIN.set(id, val);
+const setObs = (id, val) => MAIN.setObs(id, val);
+const setAndPaint = (id, val) => MAIN.setAndPaint(id, val);
 
 function touch() {
   dirty = true;
@@ -737,10 +831,18 @@ function fixText(pos) {
    LISTA SUSPENSA E CALENDÁRIO (próprios, funcionam offline)
    ============================================================ */
 let openPop = null;
-function closePop() { document.body.style.paddingBottom = ''; if (openPop) { const o = openPop; openPop = null; o.close(); } }
+let popHost = null;
+function closePop() { document.body.style.paddingBottom = ''; if (popHost) { popHost.style.paddingBottom = ''; popHost = null; } if (openPop) { const o = openPop; openPop = null; o.close(); } }
 document.addEventListener('pointerdown', e => { if (openPop && !openPop.root.contains(e.target)) closePop(); });
-document.addEventListener('keydown', e => { if (e.key === 'Escape' && openPop) { const t = openPop.trigger; closePop(); t.focus(); } });
+document.addEventListener('keydown', e => { if (e.key === 'Escape' && openPop) { e.popHandled = true; const t = openPop.trigger; closePop(); t.focus(); } });
+document.addEventListener('keydown', e => { if (e.key === 'Escape' && !e.popHandled && modalCloser) modalCloser(); });
 function revealPop(pop) {
+  const mb = pop.closest('.mbody');
+  if (mb) {
+    popHost = mb; mb.style.paddingBottom = '340px';
+    requestAnimationFrame(() => { const r = pop.getBoundingClientRect(), br = mb.getBoundingClientRect(), over = r.bottom - (br.bottom - 12); if (over > 0) mb.scrollBy({ top: over + 8, behavior: 'smooth' }); });
+    return;
+  }
   document.body.style.paddingBottom = '480px';
   requestAnimationFrame(() => {
     const r = pop.getBoundingClientRect(), over = r.bottom - (window.innerHeight - 96);
@@ -748,7 +850,7 @@ function revealPop(pop) {
   });
 }
 
-function makeDropdown({ id, options, placeholder = 'Selecione…', label, onChange }) {
+function makeDropdown({ id, options, placeholder = 'Selecione…', label, onChange, noClear = false }) {
   let value = '', kb = -1;
   const pv = h('span', { class: 'pv ph' }, placeholder);
   const trigger = h('button', { type: 'button', class: 'dd-trigger', id, 'aria-haspopup': 'listbox', 'aria-expanded': 'false', 'aria-label': label || null }, pv);
@@ -759,11 +861,14 @@ function makeDropdown({ id, options, placeholder = 'Selecione…', label, onChan
     list.append(li); return li;
   });
   const pop = h('div', { class: 'pop', hidden: true }, list);
-  const root = h('div', { class: 'pwrap' }, trigger, pop);
+  const clr = h('button', { type: 'button', class: 'dd-clear', 'aria-label': 'Limpar seleção', title: 'Limpar', hidden: true }, '×');
+  clr.addEventListener('click', e => { e.stopPropagation(); value = ''; paint(); closePop(); onChange(''); });
+  const root = h('div', { class: 'pwrap' }, trigger, noClear ? null : clr, pop);
   const ctrl = { root, trigger, close };
   function paint() {
     const o = options.find(x => x.v === value);
     pv.textContent = o ? o.l : placeholder; pv.classList.toggle('ph', !o);
+    clr.hidden = noClear || !o; root.classList.toggle('hasv', !noClear && !!o);
     items.forEach((li, i) => li.setAttribute('aria-selected', String(options[i].v === value)));
   }
   function mark(i) {
@@ -831,16 +936,52 @@ function makeDatePicker({ id, onChange }) {
   return { root, get: () => value, set: v => { value = v || ''; paint(); } };
 }
 
-function buildObs(f, wrap) {
+/* ---------- Escopo: onde os campos gravam (o registro ou um ponto de captação) ---------- */
+function makeScope({ data, obs, touch, root }) {
+  const sc = { ctl: {}, fields: [], calcs: [], root, touch, cleanup: [] };
+  Object.defineProperty(sc, 'data', { get: data });
+  Object.defineProperty(sc, 'obs', { get: obs });
+  sc.q = id => root.querySelector(`.field[data-id="${id}"]`);
+  sc.deps = () => {
+    sc.calcs.forEach(f => {
+      const v = f.calc(sc.data);
+      if (v !== (sc.data[f.id] || '')) sc.data[f.id] = v;
+      if (sc.ctl[f.id]) sc.ctl[f.id].paint(sc.data[f.id] || '');
+    });
+    sc.fields.forEach(({ f, w }) => { w.hidden = !fieldVisible(f, sc.data); });
+  };
+  sc.set = (id, val) => {
+    sc.data[id] = val;
+    const w = sc.q(id);
+    if (w) { w.classList.remove('err'); const e = w.querySelector(':scope > .errmsg'); if (e) e.remove(); }
+    sc.deps(); sc.touch();
+  };
+  sc.setObs = (id, val) => { sc.obs[id] = val; sc.touch(); };
+  sc.setAndPaint = (id, val) => { sc.data[id] = val; if (sc.ctl[id]) sc.ctl[id].paint(val); sc.deps(); };
+  return sc;
+}
+const MAIN = makeScope({ data: () => cur.data, obs: () => cur.obs, touch: () => touch(), root: document });
+MAIN.ctl = ctl;
+function paintScope(sc) {
+  for (const k of Object.keys(sc.ctl)) {
+    const c = sc.ctl[k];
+    const v = sc.data[k] !== undefined ? sc.data[k] : (/_hem$/.test(k) ? defHem(k) : undefined);
+    if (c.paint) c.paint(v);
+    if (c.obsPaint) c.obsPaint(sc.obs[k]);
+  }
+  sc.deps();
+}
+
+function buildObs(sc, f, wrap) {
   const box = h('div', { class: 'obs', hidden: true });
   const lab = h('div', { class: 'obs-lbl', hidden: true }, 'Descreva a opção “Outro/Outra” escolhida');
   const ta = h('textarea', { rows: 2, 'aria-label': 'Observação sobre: ' + f.label, placeholder: 'Observação' });
-  ta.addEventListener('input', () => setObs(f.id, ta.value));
+  ta.addEventListener('input', () => sc.setObs(f.id, ta.value));
   const btn = h('button', { type: 'button', class: 'obs-btn' }, 'Adicionar observação');
   btn.addEventListener('click', () => { box.hidden = !box.hidden; if (!box.hidden) ta.focus(); });
   let auto = false;
   const refresh = () => {
-    const o = hasOther(f) && isOtherOpt(cur.data[f.id]);
+    const o = hasOther(f) && isOtherOpt(sc.data[f.id]);
     lab.hidden = !o; btn.hidden = o;
     ta.placeholder = o ? 'Descreva qual é (obrigatório para entender a resposta)' : 'Observação';
     if (o) { box.hidden = false; auto = true; }
@@ -848,102 +989,260 @@ function buildObs(f, wrap) {
   };
   box.append(lab, ta);
   wrap.append(btn, box);
-  ctl[f.id].obsRefresh = refresh;
-  ctl[f.id].obsPaint = v => { ta.value = v || ''; box.hidden = !isFilled(v); auto = false; refresh(); };
+  sc.ctl[f.id].obsRefresh = refresh;
+  sc.ctl[f.id].obsPaint = v => { ta.value = v || ''; box.hidden = !isFilled(v); auto = false; refresh(); };
 }
 
-function buildField(f) {
-  if (f.type === 'gps') return buildGpsBox();
+const xBtn = (label, fn) => { const b = h('button', { type: 'button', class: 'xbtn', 'aria-label': label, title: label }, '×'); b.addEventListener('click', fn); return b; };
+const lcell = (t, inp) => h('div', null, h('div', { class: 'lbl-sm' }, t), inp);
+const textInput = (ph, label, mode) => h('input', { type: 'text', autocomplete: 'off', placeholder: ph, 'aria-label': label, inputmode: mode || 'text', enterkeyhint: 'next' });
+const addBtn = (label, fn) => { const b = h('button', { type: 'button', class: 'obs-btn add' }, label); b.addEventListener('click', fn); return b; };
+
+function buildField(f, sc = MAIN) {
   if (f.type === 'photos') return buildPhotoBox();
-  const w = h('div', { class: 'field', 'data-id': f.id });
+  if (f.type === 'heading') return h('div', { class: 'subhead' }, f.label);
+  if (f.type === 'coordgroup') return buildCoordGroup(f, sc);
+  const w = h('div', { class: 'field' + (f.sub ? ' sub' : ''), 'data-id': f.id });
+  if (f.showIf) sc.fields.push({ f, w });
   const labelText = f.label;
   const lbl = h('label', { class: 'lbl', id: 'l_' + f.id, for: 'f_' + f.id }, labelText, f.req ? h('span', { class: 'req' }, ' *') : null);
-  const withObs = !['textarea', 'date', 'coord'].includes(f.type);
+  const withObs = !f.noObs && !['textarea', 'date', 'coord', 'calc', 'team', 'resp', 'reservs', 'points'].includes(f.type);
 
   if (f.type === 'text' || f.type === 'number') {
-    const inp = h('input', { id: 'f_' + f.id, type: 'text', autocomplete: 'off', inputmode: f.type === 'number' ? 'decimal' : 'text', enterkeyhint: 'next' });
+    const inp = h('input', { id: 'f_' + f.id, type: 'text', autocomplete: 'off', inputmode: f.int ? 'numeric' : (f.type === 'number' ? 'decimal' : 'text'), enterkeyhint: 'next' });
     inp.addEventListener('input', () => {
-      if (f.type === 'number') { const c = inp.value.replace(/[^\d.,]/g, ''); if (c !== inp.value) inp.value = c; }
-      setState(f.id, inp.value);
+      if (f.type === 'number') { const c = f.int ? inp.value.replace(/\D/g, '') : inp.value.replace(/[^\d.,]/g, ''); if (c !== inp.value) inp.value = c; }
+      sc.set(f.id, inp.value);
     });
-    ctl[f.id] = { paint: v => { inp.value = v || ''; } };
+    sc.ctl[f.id] = { paint: v => { inp.value = v || ''; } };
     w.append(lbl);
     if (f.gps) {
       const st = h('div', { class: 'hint', 'aria-live': 'polite' });
       const gb = h('button', { type: 'button', class: 'btn' }, 'Usar GPS');
       w.append(h('div', { class: 'withbtn' }, inp, gb), st);
-      gpsAppendButton(gb, st, txt => { const cur0 = inp.value.trim(); const nv = cur0 ? cur0 + '; ' + txt : txt; inp.value = nv; setState(f.id, nv); });
+      gpsAppendButton(gb, st, txt => { const cur0 = inp.value.trim(); const nv = cur0 ? cur0 + '; ' + txt : txt; inp.value = nv; sc.set(f.id, nv); });
     } else w.append(inp);
   } else if (f.type === 'textarea') {
     const ta = h('textarea', { id: 'f_' + f.id, rows: 3 });
-    ta.addEventListener('input', () => setState(f.id, ta.value));
-    ctl[f.id] = { paint: v => { ta.value = v || ''; } };
+    ta.addEventListener('input', () => sc.set(f.id, ta.value));
+    sc.ctl[f.id] = { paint: v => { ta.value = v || ''; } };
     w.append(lbl, ta);
     if (f.gps) {
       const st = h('div', { class: 'hint', 'aria-live': 'polite' });
       const gb = h('button', { type: 'button', class: 'btn small' }, 'Adicionar posição atual (GPS)');
       w.append(h('div', { style: 'margin-top:8px' }, gb), st);
-      gpsAppendButton(gb, st, txt => { const cur0 = ta.value.trim(); const nv = cur0 ? cur0 + '\n' + txt : txt; ta.value = nv; setState(f.id, nv); });
+      gpsAppendButton(gb, st, txt => { const cur0 = ta.value.trim(); const nv = cur0 ? cur0 + '\n' + txt : txt; ta.value = nv; sc.set(f.id, nv); });
     }
   } else if (f.type === 'date') {
-    const dp = makeDatePicker({ id: 'f_' + f.id, onChange: v => setState(f.id, v) });
-    ctl[f.id] = { paint: v => dp.set(v) };
+    const dp = makeDatePicker({ id: 'f_' + f.id, onChange: v => sc.set(f.id, v) });
+    sc.ctl[f.id] = { paint: v => dp.set(v) };
     w.append(lbl, dp.root);
   } else if (f.type === 'select') {
-    const dd = makeDropdown({ id: 'f_' + f.id, options: f.options.map(o => ({ v: o, l: o })), onChange: v => { setState(f.id, v); if (ctl[f.id].obsRefresh) ctl[f.id].obsRefresh(); } });
-    ctl[f.id] = { paint: v => dd.set(v) };
+    const dd = makeDropdown({ id: 'f_' + f.id, label: f.label, options: f.options.map(o => ({ v: o, l: o })), onChange: v => { sc.set(f.id, v); if (sc.ctl[f.id].obsRefresh) sc.ctl[f.id].obsRefresh(); } });
+    sc.ctl[f.id] = { paint: v => dd.set(v) };
     w.append(lbl, dd.root);
   } else if (f.type === 'chips') {
     const g = h('div', { class: 'chips', role: 'radiogroup', 'aria-labelledby': 'l_' + f.id });
     const btns = f.options.map(o => {
       const b = h('button', { type: 'button', class: 'chip', role: 'radio', 'aria-checked': 'false' }, o);
-      b.addEventListener('click', () => { const nv = cur.data[f.id] === o ? '' : o; setState(f.id, nv); paint(nv); if (ctl[f.id].obsRefresh) ctl[f.id].obsRefresh(); });
+      b.addEventListener('click', () => { const nv = sc.data[f.id] === o ? '' : o; sc.set(f.id, nv); paint(nv); if (sc.ctl[f.id].obsRefresh) sc.ctl[f.id].obsRefresh(); });
       g.append(b); return b;
     });
     const paint = v => btns.forEach(b => b.setAttribute('aria-checked', String(b.textContent === v)));
-    ctl[f.id] = { paint };
+    sc.ctl[f.id] = { paint };
     w.append(h('span', { class: 'lbl', id: 'l_' + f.id }, labelText), g);
     lbl.remove();
+  } else if (f.type === 'calc') {
+    const val = h('span', { class: 'cv' }, '—'), box = h('div', { class: 'calcbox', id: 'f_' + f.id, 'aria-live': 'polite' }, val, h('span', { class: 'u' }, f.unit || ''));
+    sc.ctl[f.id] = { paint: v => { val.textContent = v ? v : '—'; box.classList.toggle('empty', !v); } };
+    sc.calcs.push(f);
+    w.append(lbl, box, f.hint ? h('div', { class: 'hint' }, f.hint) : null);
   } else if (f.type === 'coord') {
-    const hemId = f.id + '_hem';
-    const mk = (id, ph, mode, label) => { const i = h('input', { id, type: 'text', autocomplete: 'off', inputmode: mode, placeholder: ph, 'aria-label': label + ' de ' + f.label }); return i; };
-    const iD = mk('f_' + f.id, f.lat ? '1' : '47', 'numeric', 'Graus'), iM = mk('', '26', 'numeric', 'Minutos'), iS = mk('', '21,42', 'decimal', 'Segundos');
+    const p = f.p || '', hemId = f.id + '_hem', negHem = f.lat ? 'S' : 'W';
+    const mk = (id, ph, mode, label) => h('input', { id, type: 'text', autocomplete: 'off', inputmode: mode, placeholder: ph, 'aria-label': label + ' de ' + f.label });
+    const iD = mk('f_' + f.id, f.lat ? '1' : '47', 'decimal', 'Graus'), iM = mk('', '26', 'numeric', 'Minutos'), iS = mk('', '21,42', 'decimal', 'Segundos');
     const HL = { S: 'Sul', N: 'Norte', W: 'Oeste', E: 'Leste' };
-    const dd = makeDropdown({ id: 'f_' + hemId, label: 'Hemisfério de ' + f.label, options: (f.lat ? ['S', 'N'] : ['W', 'E']).map(o => ({ v: o, l: HL[o] })), onChange: v => { setState(hemId, v); upd(); } });
+    const dd = makeDropdown({ id: 'f_' + hemId, label: 'Hemisfério de ' + f.label, noClear: true, options: (f.lat ? ['S', 'N'] : ['W', 'E']).map(o => ({ v: o, l: HL[o] })),
+      onChange: v => { if (v === 'N' || v === 'E') iD.value = iD.value.replace('-', ''); sc.set(hemId, v); upd(); } });
     const prev = h('div', { class: 'hint' }, f.hint);
-    const cell = (t, inp) => h('div', null, h('div', { class: 'mlbl' }, t), inp);
     const pack = () => {
-      const d = iD.value.trim(), m = iM.value.trim(), sc = iS.value.trim().replace('.', ',');
-      if (!d && !m && !sc) return '';
-      const [si, sd] = sc.split(','), sec = (si || '0').padStart(2, '0') + (sd !== undefined && sd !== '' ? ',' + sd : '');
-      return (d || '0').padStart(2, '0') + (m || '0').padStart(2, '0').slice(-2) + sec;
+      const d = iD.value.replace(/\D/g, ''), m = iM.value.trim(), sec = iS.value.trim().replace('.', ',');
+      if (!d && !m && !sec) return '';
+      const [si, sd] = sec.split(','), ss = (si || '0').padStart(2, '0') + (sd !== undefined && sd !== '' ? ',' + sd : '');
+      return (d || '0').padStart(2, '0') + (m || '0').padStart(2, '0').slice(-2) + ss;
     };
     const upd = () => {
-      const v = cur.data[f.id], hem = dd.get() || DEFAULT_HEM[hemId], dec = dmsToDec(v, hem, f.lat);
+      const v = sc.data[f.id], hem = dd.get() || defHem(hemId), dec = dmsToDec(v, hem, f.lat);
       prev.classList.remove('bad');
       if (!isFilled(v)) prev.textContent = f.hint;
       else if (Number.isNaN(dec)) { prev.textContent = 'Valor inválido: minutos e segundos devem ser menores que 60 (graus até ' + (f.lat ? '90' : '180') + ').'; prev.classList.add('bad'); }
       else prev.textContent = `Lido como ${fmtDms(v, hem)}  (${dec.toFixed(6).replace('.', ',')}° em graus decimais)`;
     };
     const onIn = () => {
-      iD.value = iD.value.replace(/\D/g, '').slice(0, 3); iM.value = iM.value.replace(/\D/g, '').slice(0, 2);
+      const neg = /^\s*-/.test(iD.value);
+      iD.value = (neg ? '-' : '') + iD.value.replace(/\D/g, '').slice(0, 3);
+      iM.value = iM.value.replace(/\D/g, '').slice(0, 2);
       iS.value = iS.value.replace(/[^\d.,]/g, '');
-      setState(f.id, pack()); cur.data.gps_acc = '';
-      if (cur.data.coord_origem === 'GPS do tablet') setAndPaint('coord_origem', '');
+      if (neg && (dd.get() || defHem(hemId)) !== negHem) { dd.set(negHem); sc.data[hemId] = negHem; }
+      sc.data[p + 'gps_acc'] = '';
+      if (sc.data[p + 'coord_origem'] === 'GPS do tablet') sc.setAndPaint(p + 'coord_origem', '');
+      if (sc.data[p + 'gps_ok']) sc.setAndPaint(p + 'gps_ok', '');
+      sc.set(f.id, pack());
       upd();
     };
     [iD, iM, iS].forEach(i => i.addEventListener('input', onIn));
-    ctl[f.id] = { paint: v => {
+    sc.ctl[f.id] = { paint: v => {
       const m = /^(\d+)(?:,(\d+))?$/.exec(String(v || '').trim());
       if (!m || m[1].length < 5) { iD.value = v || ''; iM.value = ''; iS.value = ''; }
       else { const ip = m[1]; iD.value = String(parseInt(ip.slice(0, -4), 10)); iM.value = ip.slice(-4, -2); iS.value = ip.slice(-2) + (m[2] ? ',' + m[2] : ''); }
       upd(); } };
-    ctl[hemId] = { paint: v => { dd.set(v || DEFAULT_HEM[hemId]); upd(); } };
+    sc.ctl[hemId] = { paint: v => { dd.set(v || defHem(hemId)); upd(); } };
     const uin = (inp, u) => h('div', { class: 'uin' }, inp, h('span', { class: 'u', 'aria-hidden': 'true' }, u));
     w.append(lbl, h('div', { class: 'crow' }, uin(iD, '°'), uin(iM, '′'), uin(iS, '″'), dd.root), prev);
+  } else if (f.type === 'team') {
+    let model = [];
+    const emptyP = () => ({ nome: '', cargo: '', principal: false });
+    const list = h('div', { class: 'lrows' });
+    const commit = () => sc.set(f.id, model.map(x => Object.assign({}, x)));
+    const render = () => {
+      list.replaceChildren(...model.map((r, i) => {
+        const nome = textInput('Nome completo', 'Nome da pessoa ' + (i + 1)), cargo = textInput('Cargo/Função', 'Cargo/Função da pessoa ' + (i + 1));
+        nome.value = r.nome; cargo.value = r.cargo;
+        nome.addEventListener('input', () => { r.nome = nome.value; commit(); });
+        cargo.addEventListener('input', () => { r.cargo = cargo.value; commit(); });
+        const cb = h('button', { type: 'button', class: 'cb', role: 'checkbox', 'aria-checked': String(!!r.principal) }, h('span', { class: 'box', 'aria-hidden': 'true' }, r.principal ? '✓' : ''), 'Responsável principal');
+        cb.addEventListener('click', () => { const nv = !r.principal; model.forEach(x => { x.principal = false; }); r.principal = nv; commit(); render(); });
+        return h('div', { class: 'lrow' },
+          h('div', { class: 'lrow-h' }, h('span', { class: 'lrow-t' }, 'Pessoa ' + (i + 1)), model.length > 1 ? xBtn('Remover pessoa ' + (i + 1), () => { model.splice(i, 1); commit(); render(); }) : null),
+          h('div', { class: 'lrow-grid' }, lcell('Nome', nome), lcell('Cargo/Função', cargo)),
+          h('div', { class: 'lrow-f' }, cb));
+      }));
+    };
+    sc.ctl[f.id] = { paint: v => { model = asArr(v).length ? asArr(v).map(x => Object.assign(emptyP(), x)) : [emptyP()]; render(); } };
+    w.append(h('span', { class: 'lbl', id: 'l_' + f.id }, labelText), list,
+      addBtn('Adicionar pessoa', () => { model.push(emptyP()); commit(); render(); const ins = list.querySelectorAll('.lrow input'); if (ins.length) ins[ins.length - 2].focus(); }));
+    lbl.remove();
+  } else if (f.type === 'resp') {
+    let model = [];
+    const opts = f.options.map(o => ({ v: o, l: o }));
+    const list = h('div', { class: 'lrows' });
+    const commit = () => sc.set(f.id, model.map(x => Object.assign({}, x)));
+    const render = () => {
+      list.replaceChildren(...model.map((r, i) => {
+        const dd = makeDropdown({ id: `f_${f.id}_${i}`, label: 'Responsável ' + (i + 1), options: opts, placeholder: 'Selecione o responsável…',
+          onChange: v => { r.sel = v; if (v !== 'Outro') r.nome = ''; commit(); render(); } });
+        dd.set(r.sel);
+        let nome = null;
+        if (r.sel === 'Outro') {
+          nome = textInput('Nome completo (descrição de “Outro”)', 'Nome do responsável (Outro) ' + (i + 1));
+          nome.value = r.nome; nome.addEventListener('input', () => { r.nome = nome.value; commit(); });
+        }
+        return h('div', { class: 'lrow' },
+          h('div', { class: 'lrow-h' }, h('span', { class: 'lrow-t' }, 'Responsável ' + (i + 1)), model.length > 1 ? xBtn('Remover responsável ' + (i + 1), () => { model.splice(i, 1); commit(); render(); }) : null),
+          h('div', { class: 'lrow-grid one' }, dd.root, nome ? h('div', null, h('div', { class: 'lbl-sm' }, 'Descreva o “Outro”: nome de quem preencheu'), nome) : null));
+      }));
+    };
+    sc.ctl[f.id] = { paint: v => { model = asArr(v).length ? asArr(v).map(x => Object.assign({ sel: '', nome: '' }, x)) : [{ sel: '', nome: '' }]; render(); } };
+    w.append(h('span', { class: 'lbl', id: 'l_' + f.id }, labelText), list,
+      addBtn('Adicionar responsável', () => { model.push({ sel: '', nome: '' }); commit(); render(); }));
+    lbl.remove();
+  } else if (f.type === 'reservs') {
+    let model = [];
+    const list = h('div', { class: 'lrows' }), total = h('div', { class: 'total', 'aria-live': 'polite' });
+    const sum = () => model.reduce((s, x) => s + (parseInt(x, 10) || 0), 0);
+    const paintTotal = () => { total.replaceChildren('Total: ', h('b', null, sum().toLocaleString('pt-BR') + ' L')); };
+    const commit = () => { paintTotal(); sc.set(f.id, model.slice()); };
+    const render = () => {
+      list.replaceChildren(...model.map((v, i) => {
+        const inp = textInput('Volume em litros', 'Volume do reservatório ' + (i + 1) + ' em litros', 'numeric'); inp.value = v;
+        inp.addEventListener('input', () => { const c = inp.value.replace(/\D/g, ''); if (c !== inp.value) inp.value = c; model[i] = c; commit(); });
+        return h('div', { class: 'lrow compact' },
+          h('div', { class: 'lrow-h' }, h('span', { class: 'lrow-t' }, 'Reservatório ' + (i + 1)), model.length > 1 ? xBtn('Remover reservatório ' + (i + 1), () => { model.splice(i, 1); commit(); render(); }) : null),
+          h('div', { class: 'uin' }, inp, h('span', { class: 'u', 'aria-hidden': 'true' }, 'L')));
+      }));
+      paintTotal();
+    };
+    sc.ctl[f.id] = { paint: v => { model = asArr(v).length ? asArr(v).map(String) : ['']; render(); } };
+    w.append(h('span', { class: 'lbl', id: 'l_' + f.id }, labelText), list,
+      addBtn('Adicionar reservatório', () => { model.push(''); commit(); render(); const ins = list.querySelectorAll('input'); if (ins.length) ins[ins.length - 1].focus(); }),
+      total);
+    lbl.remove();
+  } else if (f.type === 'points') {
+    buildPoints(f, sc, w);
   }
-  if (withObs) buildObs(f, w);
+  if (withObs) buildObs(sc, f, w);
   return w;
+}
+
+/* ---------- Pontos de captação (cartões + modal) ---------- */
+function buildPoints(f, sc, w) {
+  const list = h('div', { class: 'cap-cards' });
+  const get = () => asArr(sc.data[f.id]);
+  const render = () => {
+    const pts = get();
+    list.replaceChildren(...(pts.length ? pts.map((pt, i) => {
+      const d = pt.data || {};
+      const card = h('div', { class: 'cap-card' });
+      const open = h('button', { type: 'button', class: 'cap-open', 'aria-label': 'Editar ponto de captação ' + (i + 1) },
+        h('span', { class: 'pc-n' }, String(i + 1)),
+        h('span', { class: 'pc-main' }, h('span', { class: 'pc-t' }, d.id_captacao || 'Ponto sem identificação'), h('span', { class: 'pc-s' }, d.tipo_captacao || 'Tipo não informado')),
+        h('span', { class: 'pc-edit' }, 'Editar'));
+      open.addEventListener('click', () => openPointModal(f, sc, i, render));
+      const del = h('button', { type: 'button', class: 'icbtn danger', 'aria-label': 'Excluir ponto de captação ' + (i + 1), title: 'Excluir' });
+      del.innerHTML = ICON_TRASH;
+      del.addEventListener('click', () => {
+        if (!confirm(`Excluir o ponto de captação “${d.id_captacao || 'sem identificação'}”? Não dá para desfazer.`)) return;
+        const next = get().slice(); next.splice(i, 1); sc.set(f.id, next); render();
+      });
+      card.append(open, del); return card;
+    }) : [h('div', { class: 'cap-empty' }, 'Nenhum ponto de captação cadastrado ainda.')]));
+  };
+  const add = h('button', { type: 'button', class: 'btn primary cap-add' }, 'Adicionar ponto de captação');
+  add.addEventListener('click', () => openPointModal(f, sc, -1, render));
+  sc.ctl[f.id] = { paint: () => render() };
+  w.append(h('div', { class: 'hint', style: 'margin:0 0 12px' }, 'Cadastre cada ponto de captação do sistema (poço, rio, igarapé…). Toque em “Adicionar ponto de captação” para abrir a ficha.'), list, add);
+}
+let modalCloser = null;
+function openPointModal(f, sc, idx, onDone) {
+  const pts = asArr(sc.data[f.id]), src = idx >= 0 ? pts[idx] : null;
+  const draft = { data: src ? JSON.parse(JSON.stringify(src.data || {})) : {}, obs: src ? JSON.parse(JSON.stringify(src.obs || {})) : {} };
+  let changed = false;
+  const body = $('mdlBody'), modal = $('modal');
+  const msc = makeScope({ data: () => draft.data, obs: () => draft.obs, touch: () => { changed = true; }, root: body });
+  body.replaceChildren();
+  f.fields.forEach(sf => body.append(buildField(sf, msc)));
+  paintScope(msc);
+  $('mdlTitle').textContent = 'Ponto de captação ' + (idx >= 0 ? idx + 1 : pts.length + 1);
+  const finish = () => { msc.cleanup.forEach(fn => { try { fn(); } catch (e) { /* ignora */ } }); closePop(); modal.hidden = true; document.body.classList.remove('noscroll'); body.replaceChildren(); modalCloser = null; };
+  const tryClose = () => { if (changed && !confirm('Descartar as alterações deste ponto de captação?')) return; finish(); };
+  modalCloser = tryClose;
+  $('mdlX').onclick = tryClose; $('mdlCancel').onclick = tryClose;
+  modal.onmousedown = e => { if (e.target === modal) tryClose(); };
+  $('mdlSave').onclick = () => {
+    msc.cleanup.forEach(fn => { try { fn(); } catch (e) { /* ignora */ } });
+    const pt = { id: src ? src.id : uid(), data: draft.data, obs: draft.obs };
+    const next = pts.slice(); if (idx >= 0) next[idx] = pt; else next.push(pt);
+    sc.set(f.id, next); finish(); onDone();
+    toast('Ponto de captação salvo');
+  };
+  modal.hidden = false; document.body.classList.add('noscroll'); body.scrollTop = 0;
+  const first = body.querySelector('.chip, input'); if (first) first.focus({ preventScroll: true });
+}
+
+function buildCoordGroup(f, sc) {
+  const p = f.p || '';
+  const wrap = h('div', { class: 'cgroup' });
+  if (f.title) wrap.append(h('div', { class: 'subhead' }, f.title));
+  wrap.append(buildGpsBox(sc, p));
+  const lat = buildField({ id: p + 'lat', label: 'Latitude (SIRGAS 2000)', type: 'coord', lat: true, p, hint: COORD_HINT }, sc);
+  const lon = buildField({ id: p + 'lon', label: 'Longitude (SIRGAS 2000)', type: 'coord', lat: false, p, hint: COORD_HINT.replace('0° 41′ 20,15″', '47° 42′ 12,30″') }, sc);
+  const tags = [lat, lon].map(el => { const t = h('span', { class: 'gtag', hidden: true }); el.querySelector('.lbl').append(t); return t; });
+  sc.ctl[p + 'gps_ok'] = { paint: v => tags.forEach(t => {
+    t.hidden = !v; t.className = 'gtag ' + (v === 'ok' ? 'ok' : 'bad'); t.textContent = v === 'ok' ? '✓ Obtida pelo GPS' : (v ? 'Não houve sucesso' : '');
+  }) };
+  const orig = buildField({ id: p + 'coord_origem', label: 'Origem das coordenadas', type: 'chips', options: COORD_ORIGEM }, sc);
+  wrap.append(lat, lon, orig);
+  return wrap;
 }
 
 function gpsAppendButton(btn, statusEl, apply) {
@@ -968,16 +1267,17 @@ function gpsAppendButton(btn, statusEl, apply) {
 
 /* ---------- Coordenadas manuais (quando o GPS falha) ---------- */
 const num = v => { const t = String(v).trim().replace(',', '.'); return t !== '' && Number.isFinite(Number(t)) ? Number(t) : NaN; };
-function applyCoords(latDec, lonDec) {
+function applyCoords(sc, p, latDec, lonDec) {
   const la = decToDms(latDec, true), lo = decToDms(lonDec, false);
-  setAndPaint('lat', la.str); setAndPaint('lat_hem', la.hem);
-  setAndPaint('lon', lo.str); setAndPaint('lon_hem', lo.hem);
-  cur.data.gps_acc = '';
-  if (cur.data.coord_origem === 'GPS do tablet') setAndPaint('coord_origem', '');
-  touch();
+  sc.setAndPaint(p + 'lat', la.str); sc.setAndPaint(p + 'lat_hem', la.hem);
+  sc.setAndPaint(p + 'lon', lo.str); sc.setAndPaint(p + 'lon_hem', lo.hem);
+  sc.data[p + 'gps_acc'] = '';
+  if (sc.data[p + 'coord_origem'] === 'GPS do tablet') sc.setAndPaint(p + 'coord_origem', '');
+  if (sc.data[p + 'gps_ok']) sc.setAndPaint(p + 'gps_ok', '');
+  sc.touch();
   return { la, lo };
 }
-function buildManual() {
+function buildManual(sc, p) {
   const root = h('div', { class: 'manual', hidden: true });
   let mode = 'dec';
   const clean = i => i.addEventListener('input', () => { const c = i.value.replace(/[^\d.,\-]/g, ''); if (c !== i.value) i.value = c; });
@@ -988,11 +1288,12 @@ function buildManual() {
   const decBox = h('div', null, h('div', { class: 'mrow2' }, dLat.w, dLon.w), h('div', { class: 'hint' }, 'Use o sinal de menos para Sul e Oeste. Ex.: -0,6892 e -47,7033.'));
   const lg = fld('Graus', { placeholder: '0' }), lm = fld('Minutos', { placeholder: '41' }), ls = fld('Segundos', { placeholder: '21,12' });
   const og = fld('Graus', { placeholder: '47' }), om = fld('Minutos', { placeholder: '42' }), os = fld('Segundos', { placeholder: '11,88' });
-  const lh = makeDropdown({ id: 'm_lat_hem', label: 'Hemisfério da latitude', options: [{ v: 'S', l: 'S – Sul' }, { v: 'N', l: 'N – Norte' }], onChange: () => {} }); lh.set('S');
-  const oh = makeDropdown({ id: 'm_lon_hem', label: 'Hemisfério da longitude', options: [{ v: 'W', l: 'W – Oeste' }, { v: 'E', l: 'E – Leste' }], onChange: () => {} }); oh.set('W');
+  const lh = makeDropdown({ id: 'm_' + p + 'lat_hem', label: 'Hemisfério da latitude', noClear: true, options: [{ v: 'S', l: 'Sul' }, { v: 'N', l: 'Norte' }], onChange: () => {} }); lh.set('S');
+  const oh = makeDropdown({ id: 'm_' + p + 'lon_hem', label: 'Hemisfério da longitude', noClear: true, options: [{ v: 'W', l: 'Oeste' }, { v: 'E', l: 'Leste' }], onChange: () => {} }); oh.set('W');
   const dmsBox = h('div', { hidden: true },
     h('div', { class: 'mtit' }, 'Latitude'), h('div', { class: 'mrow' }, lg.w, lm.w, ls.w, h('div', null, h('div', { class: 'mlbl' }, 'Hemisfério'), lh.root)),
-    h('div', { class: 'mtit' }, 'Longitude'), h('div', { class: 'mrow' }, og.w, om.w, os.w, h('div', null, h('div', { class: 'mlbl' }, 'Hemisfério'), oh.root)));
+    h('div', { class: 'mtit' }, 'Longitude'), h('div', { class: 'mrow' }, og.w, om.w, os.w, h('div', null, h('div', { class: 'mlbl' }, 'Hemisfério'), oh.root)),
+    h('div', { class: 'hint' }, 'Também vale digitar o sinal de menos nos graus (ex.: -1): Sul/Oeste.'));
   const msg = h('div', { class: 'hint', 'aria-live': 'polite' });
   const apply = h('button', { type: 'button', class: 'btn primary' }, 'Aplicar nas coordenadas');
   function setMode(m) { mode = m; bDec.setAttribute('aria-pressed', String(m === 'dec')); bDms.setAttribute('aria-pressed', String(m === 'dms')); decBox.hidden = m !== 'dec'; dmsBox.hidden = m !== 'dms'; msg.textContent = ''; }
@@ -1004,14 +1305,15 @@ function buildManual() {
       lat = num(dLat.i.value); lon = num(dLon.i.value);
       if (Number.isNaN(lat) || Number.isNaN(lon) || Math.abs(lat) > 90 || Math.abs(lon) > 180) return bad('Confira os valores: latitude de -90 a 90 e longitude de -180 a 180.');
     } else {
-      const a1 = num(lg.i.value), b1 = lm.i.value.trim() === '' ? 0 : num(lm.i.value), c1 = ls.i.value.trim() === '' ? 0 : num(ls.i.value);
-      const a2 = num(og.i.value), b2 = om.i.value.trim() === '' ? 0 : num(om.i.value), c2 = os.i.value.trim() === '' ? 0 : num(os.i.value);
-      if ([a1, b1, c1, a2, b2, c2].some(Number.isNaN) || b1 >= 60 || c1 >= 60 || b2 >= 60 || c2 >= 60 || a1 > 90 || a2 > 180 || [a1, b1, c1, a2, b2, c2].some(x => x < 0))
+      const n1 = lg.i.value.trim().startsWith('-'), n2 = og.i.value.trim().startsWith('-');
+      const a1 = Math.abs(num(lg.i.value)), b1 = lm.i.value.trim() === '' ? 0 : num(lm.i.value), c1 = ls.i.value.trim() === '' ? 0 : num(ls.i.value);
+      const a2 = Math.abs(num(og.i.value)), b2 = om.i.value.trim() === '' ? 0 : num(om.i.value), c2 = os.i.value.trim() === '' ? 0 : num(os.i.value);
+      if ([a1, b1, c1, a2, b2, c2].some(Number.isNaN) || b1 >= 60 || c1 >= 60 || b2 >= 60 || c2 >= 60 || a1 > 90 || a2 > 180 || [b1, c1, b2, c2].some(x => x < 0))
         return bad('Confira graus, minutos e segundos: minutos e segundos devem ser menores que 60.');
-      lat = (a1 + b1 / 60 + c1 / 3600) * (lh.get() === 'S' ? -1 : 1);
-      lon = (a2 + b2 / 60 + c2 / 3600) * (oh.get() === 'W' ? -1 : 1);
+      lat = (a1 + b1 / 60 + c1 / 3600) * ((n1 || lh.get() === 'S') ? -1 : 1);
+      lon = (a2 + b2 / 60 + c2 / 3600) * ((n2 || oh.get() === 'W') ? -1 : 1);
     }
-    const r = applyCoords(lat, lon);
+    const r = applyCoords(sc, p, lat, lon);
     msg.classList.remove('bad');
     msg.textContent = `Aplicado: latitude ${r.la.str} ${r.la.hem}, longitude ${r.lo.str} ${r.lo.hem}. Escolha a origem das coordenadas logo abaixo.`;
   });
@@ -1019,33 +1321,36 @@ function buildManual() {
   return root;
 }
 
-function buildGpsBox() {
+function buildGpsBox(sc, p) {
   const btn = h('button', { type: 'button', class: 'btn primary' }, 'Capturar localização (GPS)');
   const st = h('div', { class: 'gps-status', 'aria-live': 'polite' }, 'Preenche latitude e longitude. O GPS funciona sem internet; fique em local aberto.');
-  const manual = buildManual();
+  const manual = buildManual(sc, p);
   const tg = h('button', { type: 'button', class: 'obs-btn', 'aria-expanded': 'false' }, 'GPS com problema? Digitar coordenadas manualmente');
   const openManual = open => { manual.hidden = !open; tg.setAttribute('aria-expanded', String(open)); };
   tg.addEventListener('click', () => openManual(manual.hidden));
   let session = null;
+  sc.cleanup.push(() => { if (session) session.stop(); });
   btn.addEventListener('click', () => {
     if (session) { session.stop(); return; }
-    if (!navigator.geolocation) { st.textContent = 'Este navegador não oferece GPS. Digite as coordenadas manualmente abaixo.'; openManual(true); return; }
+    sc.setAndPaint(p + 'gps_ok', '');
+    if (!navigator.geolocation) { st.textContent = 'Este navegador não oferece GPS. Digite as coordenadas manualmente abaixo.'; sc.setAndPaint(p + 'gps_ok', 'fail'); sc.touch(); openManual(true); return; }
     btn.textContent = 'Parar captura';
     st.textContent = 'Buscando sinal de GPS…';
     session = startGps({
-      onUpdate: p => {
-        const la = decToDms(p.coords.latitude, true), lo = decToDms(p.coords.longitude, false);
-        setAndPaint('lat', la.str); setAndPaint('lat_hem', la.hem);
-        setAndPaint('lon', lo.str); setAndPaint('lon_hem', lo.hem);
-        setAndPaint('coord_origem', 'GPS do tablet');
-        cur.data.gps_acc = Math.round(p.coords.accuracy);
-        touch();
-        st.textContent = `Precisão atual ±${Math.round(p.coords.accuracy)} m. Refinando…`;
+      onUpdate: pos => {
+        const la = decToDms(pos.coords.latitude, true), lo = decToDms(pos.coords.longitude, false);
+        sc.setAndPaint(p + 'lat', la.str); sc.setAndPaint(p + 'lat_hem', la.hem);
+        sc.setAndPaint(p + 'lon', lo.str); sc.setAndPaint(p + 'lon_hem', lo.hem);
+        sc.setAndPaint(p + 'coord_origem', 'GPS do tablet');
+        sc.data[p + 'gps_acc'] = Math.round(pos.coords.accuracy);
+        sc.touch();
+        st.textContent = `Precisão atual ±${Math.round(pos.coords.accuracy)} m. Refinando…`;
       },
       onEnd: (best, err) => {
         session = null; btn.textContent = 'Capturar localização (GPS)';
-        if (best) st.textContent = `Posição registrada com precisão de ±${Math.round(best.coords.accuracy)} m.`;
-        else { st.textContent = gpsErrorMsg(err) + ' Digite as coordenadas manualmente abaixo.'; openManual(true); }
+        if (best) { st.textContent = `Posição registrada com precisão de ±${Math.round(best.coords.accuracy)} m.`; sc.setAndPaint(p + 'gps_ok', 'ok'); }
+        else { st.textContent = gpsErrorMsg(err) + ' Digite as coordenadas manualmente abaixo.'; sc.setAndPaint(p + 'gps_ok', 'fail'); openManual(true); }
+        sc.touch();
       }
     });
   });
@@ -1163,7 +1468,12 @@ function buildAll() {
 
     const p = h('section', { class: 'panel', hidden: true, 'aria-label': s.title },
       h('div', { class: 'phead' }, h('h2', null, s.title), h('div', { class: 'prog-wrap' }, h('span', { class: 'prog-txt' }, ''), h('div', { class: 'prog' }, h('i')))));
-    s.fields.forEach(f => p.append(buildField(f)));
+    let gh = null, gk = null;
+    s.fields.forEach(f => {
+      const el = buildField(f);
+      if (f.grp) { if (gk !== f.grp) { gh = h('div', { class: 'fgrid' }); gk = f.grp; p.append(gh); } gh.append(el); }
+      else { gk = null; p.append(el); }
+    });
     const prev = i > 0 ? h('button', { type: 'button', class: 'btn' }, '‹ Anterior') : null;
     const next = i < SECTIONS.length - 1 ? h('button', { type: 'button', class: 'btn primary' }, 'Próxima ›') : null;
     if (prev) prev.addEventListener('click', () => showSection(i - 1));
@@ -1184,8 +1494,8 @@ function showSection(i) {
 function updateNav() {
   let tot = 0, filled = 0;
   SECTIONS.forEach((s, i) => {
-    const fs = s.fields.filter(isData);
-    const n = fs.filter(f => isFilled(cur.data[f.id])).length;
+    const fs = s.fields.filter(f => isData(f) && fieldVisible(f, cur.data));
+    const n = fs.filter(f => fieldFilled(f, cur.data)).length;
     tot += fs.length; filled += n;
     navBtns[i].querySelector('.n').textContent = `${n}/${fs.length}`;
     navBtns[i].classList.toggle('done', n === fs.length);
@@ -1198,11 +1508,7 @@ function updateNav() {
 }
 
 function applyAll() {
-  for (const k of Object.keys(ctl)) {
-    const v = cur.data[k] !== undefined ? cur.data[k] : DEFAULT_HEM[k];
-    if (ctl[k].paint) ctl[k].paint(v);
-    if (ctl[k].obsPaint) ctl[k].obsPaint(cur.obs[k]);
-  }
+  paintScope(MAIN);
   document.querySelectorAll('.field.err').forEach(w => w.classList.remove('err'));
   document.querySelectorAll('.errmsg').forEach(e => e.remove());
   updateNav(); updateFormHead(); renderPhotos();
@@ -1220,13 +1526,7 @@ function updateFormHead() {
 /* ============================================================
    FLUXO: novo, rascunho, salvar, editar, excluir
    ============================================================ */
-async function freshData() {
-  const last = ((await dbGet('meta', 'last')) || {}).value || {};
-  return Object.assign({}, DEFAULT_HEM, {
-    data_visita: todayISO(), data_final: todayISO(),
-    municipio: last.municipio || '', equipe: last.equipe || '', responsavel: last.responsavel || ''
-  });
-}
+async function freshData() { return {}; }
 async function newRecord() {
   cur = { id: null, rid: uid(), createdAt: null, data: await freshData(), obs: {} };
   dirty = false;
@@ -1242,7 +1542,7 @@ async function askNew() {
 }
 
 async function saveRecord() {
-  const missing = ALL_FIELDS.filter(f => f.req && !isFilled(cur.data[f.id]));
+  const missing = ALL_FIELDS.filter(f => f.req && !fieldFilled(f, cur.data));
   if (missing.length) {
     showSection(0);
     missing.forEach(f => {
@@ -1257,7 +1557,6 @@ async function saveRecord() {
   const rec = { id: cur.id || cur.rid, createdAt: cur.createdAt || now, updatedAt: now, data: cur.data, obs: cur.obs };
   try {
     await dbPut('records', rec);
-    await dbPut('meta', { key: 'last', value: { municipio: cur.data.municipio, equipe: cur.data.equipe, responsavel: cur.data.responsavel } });
     await dbDel('meta', 'draft');
   } catch (e) { toast('Erro ao salvar. Exporte um backup e reabra o app.', 5000); return; }
   dirty = false;
@@ -1272,6 +1571,7 @@ async function editRecord(id) {
   await discardUnsaved();
   const r = await dbGet('records', id);
   if (!r) return;
+  migrateRec(r);
   cur = { id: r.id, rid: r.id, createdAt: r.createdAt, data: Object.assign({}, r.data), obs: Object.assign({}, r.obs || {}) };
   dirty = false; await dbDel('meta', 'draft');
   $('banner').hidden = true;
@@ -1291,11 +1591,23 @@ async function deleteRecord(id) {
    LISTA E STATUS
    ============================================================ */
 let records = [], lastExport = 0;
+const LEGACY_CAPT = ['tipo_captacao', 'id_captacao', 'lat', 'lon', 'coord_origem', 'corpo_hidrico', 'vazao', 'regularizacao', 'medicao_volume', 'equipamento', 'obs_captacao'];
+function migrateRec(r) {
+  const d = r.data || (r.data = {}), o = r.obs || (r.obs = {});
+  if (!d.equipe_lista && isFilled(d.equipe)) d.equipe_lista = [{ nome: d.equipe, cargo: '', principal: false }];
+  if (!d.responsaveis && isFilled(d.responsavel)) d.responsaveis = [{ sel: 'Outro', nome: d.responsavel }];
+  if (!Array.isArray(d.captacoes) && LEGACY_CAPT.some(k => isFilled(d[k]))) {
+    const pd = {}, po = {};
+    LEGACY_CAPT.concat(['lat_hem', 'lon_hem', 'gps_acc']).forEach(k => { if (d[k] !== undefined) pd[k] = d[k]; if (o[k]) po[k] = o[k]; });
+    d.captacoes = [{ id: uid(), data: pd, obs: po }];
+  }
+  return r;
+}
 let stamps = { lastBackup: 0, lastPhotos: 0, lastSent: 0 };
 let persisted = false;
 let routineOpen = false;
 async function refresh() {
-  records = (await dbAll('records')).sort((a, b) => b.updatedAt - a.updatedAt);
+  records = (await dbAll('records')).map(migrateRec).sort((a, b) => b.updatedAt - a.updatedAt);
   photos = await dbAll('photos');
   const g = async k => ((await dbGet('meta', k)) || {}).value || 0;
   lastExport = await g('lastExport');
@@ -1410,11 +1722,17 @@ async function askPersist() {
   toast(persisted ? 'Dados protegidos pelo navegador.' : 'O navegador não concedeu a proteção. Instale o app na tela inicial e tente de novo.', 5000);
 }
 function completion(r) {
-  const fs = ALL_FIELDS; const n = fs.filter(f => isFilled(r.data[f.id])).length;
+  const fs = ALL_FIELDS.filter(f => fieldVisible(f, r.data)); const n = fs.filter(f => fieldFilled(f, r.data)).length;
   return Math.round(100 * n / fs.length);
 }
 const ICON_TRASH = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h18"/><path d="M8 6V4h8v2"/><path d="M19 6l-1 14H6L5 6"/><path d="M10 11v6M14 11v6"/></svg>';
 function initials(s) { const w = (s || '?').trim().split(/\s+/).filter(Boolean); return ((w[0] || '?')[0] + (w[1] ? w[1][0] : '')).toUpperCase(); }
+function capSummary(r) {
+  const pts = asArr(r.data.captacoes);
+  if (!pts.length) return 'Captação não informada';
+  if (pts.length === 1) return (pts[0].data || {}).tipo_captacao || 'Captação informada';
+  return pts.length + ' pontos de captação';
+}
 function renderList() {
   const q = norm($('search').value.trim());
   const host = $('list'); host.replaceChildren();
@@ -1435,7 +1753,7 @@ function renderList() {
     card.append(h('div', { class: 'rrow' },
       h('span', { class: 'avatar' }, initials(r.data.localidade)),
       h('div', { class: 'c-main' }, h('div', { class: 't' }, r.data.localidade || '(sem localidade)'), h('div', { class: 's' }, r.data.municipio || 'Sem município')),
-      h('div', { class: 'c-mid' }, h('div', { class: 't2' }, r.data.tipo_captacao || 'Captação não informada'), h('div', { class: 's' }, fmtDate(r.data.data_visita))),
+      h('div', { class: 'c-mid' }, h('div', { class: 't2' }, capSummary(r)), h('div', { class: 's' }, fmtDate(r.data.data_visita))),
       h('div', { class: 'c-prog' }, h('div', { class: 'bar' }, h('i', { style: 'width:' + pc + '%' })), h('span', { class: 's' }, pc + '%')),
       h('div', { class: 'c-stat' }, h('span', { class: 'tagp ' + (pend ? 'warn' : 'ok') }, pend ? 'Não exportado' : 'Exportado'), nph ? h('span', { class: 'tagp' }, nph === 1 ? '1 foto' : nph + ' fotos') : null),
       h('div', { class: 'acts' }, edit, del)));
@@ -1603,37 +1921,92 @@ function photoTable() {
     has(p.lat) ? { v: p.lat.toFixed(6), n: true } : { v: '' }, has(p.lon) ? { v: p.lon.toFixed(6), n: true } : { v: '' }, has(p.acc) ? { v: p.acc, n: true } : { v: '' }]; });
   return { headers, rows, list, names };
 }
-// Monta a tabela (cabeçalhos + linhas) a partir dos registros
+const teamText = v => asArr(v).filter(x => isFilled(x.nome) || isFilled(x.cargo))
+  .map(x => (x.nome || '(sem nome)') + (isFilled(x.cargo) ? ' – ' + x.cargo : '') + (x.principal ? ' [responsável principal]' : '')).join('\n');
+const teamMain = v => asArr(v).filter(x => x.principal && isFilled(x.nome)).map(x => x.nome).join('; ');
+const respText = v => asArr(v).map(x => x.sel === 'Outro' ? (isFilled(x.nome) ? x.nome : 'Outro') : x.sel).filter(isFilled).join('; ');
+const GPS_RES = { ok: 'Obtida pelo GPS', fail: 'Não houve sucesso' };
+
+// Colunas de exportação de um campo. get(c) recebe { d: dados, o: observações }.
+function fieldCols(f, nm, hasObs) {
+  const T = nm(f), cols = [];
+  const col = (hd, get) => cols.push({ h: hd, get });
+  switch (f.type) {
+    case 'team':
+      col('Equipe técnica/responsável', c => ({ v: teamText(c.d[f.id]) }));
+      col('Responsável principal', c => ({ v: teamMain(c.d[f.id]) }));
+      return cols;
+    case 'resp':
+      col(T, c => ({ v: respText(c.d[f.id]) }));
+      return cols;
+    case 'reservs': {
+      const vols = c => asArr(c.d[f.id]).filter(isFilled);
+      col('Reservatórios – quantidade informada', c => ({ v: vols(c).length, n: true }));
+      col('Reservatórios – volumes (L)', c => ({ v: vols(c).map((x, i) => `${i + 1}: ${x}`).join('; ') }));
+      col('Reservatórios – total (L)', c => ({ v: vols(c).reduce((s, x) => s + (parseInt(x, 10) || 0), 0), n: true }));
+      return cols;
+    }
+    case 'points':
+      col('Captações – quantidade', c => ({ v: asArr(c.d[f.id]).length, n: true }));
+      col('Captações – resumo', c => ({ v: asArr(c.d[f.id]).map((pt, i) => `${i + 1}. ${(pt.data || {}).id_captacao || 'sem identificação'} – ${(pt.data || {}).tipo_captacao || 'tipo não informado'}`).join('\n') }));
+      return cols;
+    case 'coordgroup': {
+      const p = f.p;
+      [['lat', 'Latitude', true], ['lon', 'Longitude', false]].forEach(([k, name, isLat]) => {
+        const hem = c => c.d[p + k + '_hem'] || defHem(p + k + '_hem');
+        col(`${T}: ${name} (SIRGAS 2000, GGMMSS,ss)`, c => ({ v: c.d[p + k] === undefined ? '' : c.d[p + k] }));
+        col(`${T}: ${name} – hemisfério`, c => ({ v: isFilled(c.d[p + k]) ? hem(c) : '' }));
+        col(`${T}: ${name} (graus decimais)`, c => { const d = dmsToDec(c.d[p + k], hem(c), isLat); return (d === null || Number.isNaN(d)) ? { v: '' } : { v: d.toFixed(6), n: true }; });
+      });
+      col(`${T}: precisão do GPS (m)`, c => ({ v: c.d[p + 'gps_acc'] === undefined ? '' : c.d[p + 'gps_acc'], n: true }));
+      col(`${T}: captura pelo GPS`, c => ({ v: GPS_RES[c.d[p + 'gps_ok']] || '' }));
+      col(`${T}: origem das coordenadas`, c => ({ v: c.d[p + 'coord_origem'] || '' }));
+      if (hasObs(p + 'coord_origem')) col(`${T}: origem das coordenadas – observação`, c => ({ v: (c.o || {})[p + 'coord_origem'] || '' }));
+      return cols;
+    }
+  }
+  col(T, c => {
+    if (!fieldVisible(f, c.d)) return { v: '' };
+    const v = c.d[f.id] === undefined ? '' : c.d[f.id];
+    if (f.type === 'date') return { v: fmtDate(v) };
+    if (f.type === 'number' || f.type === 'calc') return { v: String(v).replace(',', '.'), n: true };
+    return { v };
+  });
+  if (hasObs(f.id)) col(T + (hasOther(f) ? ' – descrição de “Outro” / observação' : ' – observação'), c => ({ v: fieldVisible(f, c.d) ? ((c.o || {})[f.id] || '') : '' }));
+  return cols;
+}
+// Monta as tabelas (cabeçalhos + linhas) a partir dos registros
 function buildTable(recs) {
   const sorted = recs.slice().sort((a, b) => a.createdAt - b.createdAt);
-  const counts = {}; ALL_FIELDS.forEach(f => { const k = f.label.toLowerCase(); counts[k] = (counts[k] || 0) + 1; });
-  const name = f => (counts[f.label.toLowerCase()] > 1 ? `[${f.sec}] ` : '') + f.label;
+  const label = f => f.xl || f.label || f.title;
+  const counts = {}; ALL_FIELDS.forEach(f => { const k = label(f).toLowerCase(); counts[k] = (counts[k] || 0) + 1; });
+  const nm = f => (counts[label(f).toLowerCase()] > 1 ? `[${f.sec}] ` : '') + label(f);
   const cols = [
     { h: 'ID do registro', get: r => ({ v: r.id }) },
     { h: 'Criado em', get: r => ({ v: fmtTs(r.createdAt) }) },
     { h: 'Atualizado em', get: r => ({ v: fmtTs(r.updatedAt) }) },
   ];
-  for (const f of ALL_FIELDS) {
-    cols.push({ h: name(f), get: r => {
-      const v = r.data[f.id] === undefined ? '' : r.data[f.id];
-      if (f.type === 'date') return { v: fmtDate(v) };
-      if (f.type === 'number') return { v: String(v).replace(',', '.'), n: true };
-      return { v };
-    }});
-    if (f.type === 'coord') {
-      cols.push({ h: f.label.replace(/ \(.*/, '') + ' – hemisfério', get: r => ({ v: isFilled(r.data[f.id]) ? (r.data[f.id + '_hem'] || DEFAULT_HEM[f.id + '_hem']) : '' }) });
-      cols.push({ h: f.label.replace(/ \(.*/, '') + ' (graus decimais)', get: r => {
-        const d = dmsToDec(r.data[f.id], r.data[f.id + '_hem'] || DEFAULT_HEM[f.id + '_hem'], f.lat);
-        return (d === null || Number.isNaN(d)) ? { v: '' } : { v: d.toFixed(6), n: true };
-      }});
-      if (!f.lat) cols.push({ h: 'Precisão do GPS (m)', get: r => ({ v: r.data.gps_acc === undefined ? '' : r.data.gps_acc, n: true }) });
-    }
-    if (sorted.some(r => isFilled((r.obs || {})[f.id]))) cols.push({ h: name(f) + (hasOther(f) ? ' – descrição de “Outro” / observação' : ' – observação'), get: r => ({ v: (r.obs || {})[f.id] || '' }) });
-  }
+  const hasObsMain = k => sorted.some(r => isFilled((r.obs || {})[k]));
+  for (const f of ALL_FIELDS) fieldCols(f, nm, hasObsMain).forEach(cc => cols.push({ h: cc.h, get: r => cc.get({ d: r.data, o: r.obs || {} }) }));
   const names = photoNames();
   cols.push({ h: 'Fotos (quantidade)', get: r => ({ v: photos.filter(p => p.rid === r.id).length, n: true }) });
   cols.push({ h: 'Fotos (arquivos)', get: r => ({ v: photos.filter(p => p.rid === r.id).sort((a, b) => a.ts - b.ts).map(p => names.get(p.id)).filter(Boolean).join('\n') }) });
-  return { headers: cols.map(c => c.h), rows: sorted.map(r => cols.map(c => c.get(r))) };
+
+  // Planilha "Captações": uma linha por ponto de captação
+  const capF = ALL_FIELDS.find(f => f.type === 'points');
+  const pts = [];
+  sorted.forEach(r => asArr(r.data.captacoes).forEach((pt, i) => pts.push({ r, pt, i })));
+  const hasObsPt = k => pts.some(x => isFilled(((x.pt.obs) || {})[k]));
+  const pcols = [
+    { h: 'ID do registro', get: x => ({ v: x.r.id }) },
+    { h: 'Município', get: x => ({ v: x.r.data.municipio || '' }) },
+    { h: 'Localidade/comunidade', get: x => ({ v: x.r.data.localidade || '' }) },
+    { h: 'Data da visita', get: x => ({ v: fmtDate(x.r.data.data_visita) }) },
+    { h: 'Ponto de captação nº', get: x => ({ v: x.i + 1, n: true }) },
+  ];
+  if (capF) capF.fields.filter(isData).forEach(sf => fieldCols(sf, label, hasObsPt).forEach(cc => pcols.push({ h: cc.h, get: x => cc.get({ d: x.pt.data || {}, o: x.pt.obs || {} }) })));
+  return { headers: cols.map(c => c.h), rows: sorted.map(r => cols.map(c => c.get(r))),
+    pt: { headers: pcols.map(c => c.h), rows: pts.map(x => pcols.map(c => c.get(x))) } };
 }
 /*XLSX-END*/
 
@@ -1654,18 +2027,27 @@ function needRecords() { if (!records.length) { toast('Não há registros salvos
 async function xlsxFile() {
   const t = buildTable(records), pt = photoTable();
   const sheets = [{ name: 'Registros', headers: t.headers, rows: t.rows }];
+  if (t.pt && t.pt.rows.length) sheets.push({ name: 'Captações', headers: t.pt.headers, rows: t.pt.rows });
   if (pt.list.length) sheets.push({ name: 'Fotos', headers: pt.headers, rows: pt.rows });
   return { blob: await buildXlsxBlob(sheets), name: `diagnostico_marapanim_${stamp()}.xlsx` };
 }
 async function exportXlsx() { if (!needRecords()) return; const f = await xlsxFile(); download(f.blob, f.name); await markExported('xlsx'); toast('Planilha Excel gerada'); }
 const fmtDeg = (v, isLat) => { const x = decToDms(v, isLat); return fmtDms(x.str, x.hem); };
+function recCoord(r) {
+  for (const pt of asArr(r.data.captacoes)) {
+    const d = pt.data || {};
+    const la = dmsToDec(d.lat, d.lat_hem || 'S', true), lo = dmsToDec(d.lon, d.lon_hem || 'W', false);
+    if (la !== null && lo !== null && !Number.isNaN(la) && !Number.isNaN(lo)) return { la, lo };
+  }
+  return null;
+}
 function stampLines(p, r) {
   const d = r.data, l1 = [d.municipio, d.localidade].filter(Boolean).join(' – ') + (p.tag ? ' | ' + p.tag : '');
   let l2;
   if (p.lat !== null && p.lat !== undefined) l2 = `Lat ${fmtDeg(p.lat, true)}   Lon ${fmtDeg(p.lon, false)}   (GPS ±${p.acc} m)`;
   else {
-    const la = dmsToDec(d.lat, d.lat_hem || DEFAULT_HEM.lat_hem, true), lo = dmsToDec(d.lon, d.lon_hem || DEFAULT_HEM.lon_hem, false);
-    l2 = (la !== null && lo !== null && !Number.isNaN(la) && !Number.isNaN(lo)) ? `Lat ${fmtDeg(la, true)}   Lon ${fmtDeg(lo, false)}   (coordenadas do ponto)` : 'Coordenadas não registradas';
+    const c = recCoord(r);
+    l2 = c ? `Lat ${fmtDeg(c.la, true)}   Lon ${fmtDeg(c.lo, false)}   (coordenadas da captação)` : 'Coordenadas não registradas';
   }
   return [l1 || 'Sem local', l2, fmtTs(p.ts)];
 }
@@ -1822,6 +2204,7 @@ async function init() {
   for (const ph of photos.filter(x => !recIds.has(x.rid) && x.rid !== keep)) await dbPhotoDelete(ph.id);
   photos = photos.filter(x => recIds.has(x.rid) || x.rid === keep);
   if (draft && draft.data) {
+    migrateRec(draft);
     cur = { id: draft.id || null, rid: draft.rid || draft.id || uid(), createdAt: draft.createdAt || null, data: draft.data, obs: draft.obs || {} };
     dirty = true;
     $('banner').hidden = false;
