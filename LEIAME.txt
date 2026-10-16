@@ -1,4 +1,4 @@
-FORMULARIO DE CAMPO - DIAGNOSTICO DOS SISTEMAS DE ABASTECIMENTO (BACIA DO RIO MARAPANIM)
+MARAPAFORM - FORMULARIO DE CAMPO - DIAGNOSTICO DOS SISTEMAS DE ABASTECIMENTO (BACIA DO RIO MARAPANIM)
 
 ARQUIVOS
   index.html            o formulario
@@ -62,4 +62,4 @@ COORDENADAS
   - O GPS do tablet fornece WGS84, equivalente ao SIRGAS 2000 para esta finalidade (diferenca de centimetros).
 
 ATUALIZAR O APP
-  - Edite os arquivos, aumente o numero em CACHE no sw.js (ex.: marapanim-v2) e publique de novo.
+  - Edite os arquivos, aumente o numero em CACHE no sw.js (ex.: marapanim-v14) e publique de novo.
